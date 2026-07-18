@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anesthesia Reference Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F8F8; --surface:#FFFFFF; --ink:#0F2430; --ink-soft:#49626F; --ink-faint:#7C919C;
+  --teal:#0E7C7B; --teal-deep:#0A5B5B; --teal-tint:#E3F1F0; --teal-ghost:#EEF6F5;
+  --amber:#C07A16; --amber-tint:#FBF1DF;
+  --red:#B23A2F; --red-tint:#F9E9E6;
+  --line:#DBE6E6; --line-soft:#E8EFEF;
+  --shadow:0 1px 2px rgba(15,36,48,.05),0 8px 24px rgba(15,36,48,.07);
+  --shadow-lg:0 2px 4px rgba(15,36,48,.05),0 16px 40px rgba(15,36,48,.10);
+  --r:14px;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --disp:'Space Grotesk',sans-serif;
+  --body:'IBM Plex Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;font-weight:450;}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+input,select{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- shell ---------- */
+.shell{max-width:1020px;margin:0 auto;padding:0 20px 80px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0 0;}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer;user-select:none}
+.brand .mark{width:34px;height:34px;border-radius:9px;background:var(--ink);display:grid;place-items:center;flex:none}
+.brand .mark svg{width:19px;height:19px}
+.brand .name{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.02em}
+.brand .name span{color:var(--teal)}
+.crumb{font-family:var(--mono);font-size:12px;color:var(--ink-faint);letter-spacing:.02em}
+.crumb b{color:var(--ink-soft);font-weight:500}
+
+/* ---------- home ---------- */
+.hero{padding:44px 0 26px}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:14px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,44px);letter-spacing:-.03em;line-height:1.08}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{max-width:520px;color:var(--ink-soft);margin-top:14px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:8px}
+.tool-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px 22px;text-align:left;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;display:flex;flex-direction:column;gap:14px;min-height:186px}
+.tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#C6D8D8}
+.tool-card .icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex:none}
+.tool-card .icon svg{width:24px;height:24px}
+.ic-teal{background:var(--teal-tint);color:var(--teal-deep)}
+.ic-ink{background:#E7EDF1;color:var(--ink)}
+.ic-ghost{background:#F0F4F5;color:var(--ink-faint)}
+.tool-card h3{font-family:var(--disp);font-weight:600;font-size:17.5px;letter-spacing:-.015em}
+.tool-card p{color:var(--ink-soft);font-size:13.5px;line-height:1.5}
+.tool-card .go{margin-top:auto;font-family:var(--mono);font-size:12px;color:var(--teal-deep);display:flex;align-items:center;gap:6px;font-weight:500}
+.tool-card.soon{cursor:default;border-style:dashed;box-shadow:none;background:transparent}
+.tool-card.soon:hover{transform:none;border-color:var(--line)}
+.tool-card.soon h3{color:var(--ink-faint)}
+.tool-card.soon p{color:var(--ink-faint)}
+.tag-soon{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);border-radius:99px;padding:3px 9px;align-self:flex-start}
+
+/* ---------- tool pages common ---------- */
+.page-head{padding:40px 0 22px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;justify-content:space-between}
+.page-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4vw,32px);letter-spacing:-.025em}
+.page-head .sub{color:var(--ink-soft);margin-top:6px;max-width:560px;font-size:14.5px}
+.back{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:var(--surface);transition:border-color .15s}
+.back:hover{border-color:var(--teal)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+
+/* ---------- LA calculator ---------- */
+.la-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:18px}
+.wt-card{padding:16px 18px;display:flex;align-items:center;gap:16px;flex:1 1 300px}
+.wt-card label{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.wt-input-wrap{display:flex;align-items:baseline;gap:8px}
+#wt{width:110px;border:none;border-bottom:2px solid var(--line);font-family:var(--mono);font-size:30px;font-weight:600;color:var(--ink);padding:0 2px 2px;background:transparent;text-align:right}
+#wt:focus{border-bottom-color:var(--teal);outline:none}
+#wt::placeholder{color:#C3D2D6}
+.unit-toggle{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:none}
+.unit-toggle button{padding:7px 13px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);background:var(--surface)}
+.unit-toggle button.on{background:var(--ink);color:#fff}
+.mode-card{padding:16px 18px;display:flex;align-items:center;gap:14px;flex:0 1 auto}
+.hint{font-size:12.5px;color:var(--ink-faint);flex-basis:100%;padding:2px 4px 0}
+
+/* budget gauge — syringe */
+.budget{padding:20px 22px 22px;margin-bottom:18px}
+.budget .row1{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.budget .row1 .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.budget .pct{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
+.budget .pct small{font-size:13px;font-weight:400;color:var(--ink-faint);margin-left:6px}
+.syr{position:relative;height:34px;border:2px solid var(--ink);border-radius:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),var(--line) calc(10% - 1px) 10%);overflow:hidden}
+.syr .fill{position:absolute;inset:0;width:0%;background:var(--teal);transition:width .35s cubic-bezier(.4,0,.2,1),background-color .35s}
+.syr .fill::after{content:"";position:absolute;right:0;top:0;bottom:0;width:3px;background:rgba(255,255,255,.55)}
+.syr.warn .fill{background:var(--amber)}
+.syr.over .fill{background:var(--red)}
+.syr-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-top:6px;padding:0 1px}
+.budget .note{font-size:13px;color:var(--ink-soft);margin-top:12px}
+.budget .note b{color:var(--ink)}
+
+/* LAST alert */
+.last-alert{border:1.5px solid var(--red);background:var(--red-tint);border-radius:var(--r);padding:16px 18px;margin-bottom:18px;display:none}
+.last-alert.show{display:block;animation:pop .3s ease}
+@keyframes pop{from{transform:scale(.985);opacity:.5}to{transform:scale(1);opacity:1}}
+.last-alert h4{font-family:var(--disp);color:var(--red);font-size:15.5px;display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.last-alert p{font-size:13.5px;color:#6E2A22}
+.last-alert p b{font-family:var(--mono)}
+
+/* dose table */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r)}
+table.doses{width:100%;border-collapse:collapse;min-width:680px}
+table.doses th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);white-space:nowrap;font-weight:500}
+table.doses th.num,table.doses td.num{text-align:right}
+table.doses td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+table.doses tr:last-child td{border-bottom:none}
+table.doses tbody tr{transition:background .15s}
+table.doses tbody tr:hover{background:var(--teal-ghost)}
+.agent-name{font-weight:600;font-size:14.5px;letter-spacing:-.01em;white-space:nowrap}
+.agent-sub{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-top:2px}
+td .mono{font-family:var(--mono);font-size:14px}
+td .dim{color:var(--ink-faint);font-size:11.5px;font-family:var(--mono)}
+.give-wrap{display:flex;align-items:center;gap:6px;justify-content:flex-end}
+.give-wrap input{width:76px;padding:8px 9px;border:1.5px solid var(--line);border-radius:9px;font-family:var(--mono);font-size:14px;text-align:right;background:#FBFDFD;transition:border-color .15s}
+.give-wrap input:focus{border-color:var(--teal);outline:none;background:#fff}
+.give-wrap input.has{border-color:var(--teal);background:var(--teal-ghost)}
+.give-wrap .u{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);width:22px}
+.conc-sel{padding:8px 6px;border:1.5px solid var(--line);border-radius:9px;font-family:var(--mono);font-size:12.5px;background:#FBFDFD;color:var(--ink-soft)}
+.remain{font-family:var(--mono);font-size:14.5px;font-weight:600;white-space:nowrap}
+.remain small{display:block;font-size:11px;font-weight:400;color:var(--ink-faint);margin-top:1px}
+.remain.zero{color:var(--red)}
+.rowbar{height:3px;border-radius:2px;background:var(--line-soft);margin-top:7px;overflow:hidden;min-width:90px}
+.rowbar i{display:block;height:100%;background:var(--teal);width:0%;transition:width .3s}
+.tbl-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 18px;border-top:1px solid var(--line);align-items:center}
+.tbl-foot .fine{font-size:12px;color:var(--ink-faint);max-width:640px}
+.clear-btn{font-family:var(--mono);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:99px;padding:7px 14px;background:var(--surface);flex:none}
+.clear-btn:hover{border-color:var(--red);color:var(--red)}
+
+/* ---------- ASRA ---------- */
+.asra-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
+.search-wrap{position:relative;flex:1 1 240px}
+.search-wrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--ink-faint)}
+#asra-q{width:100%;padding:11px 14px 11px 38px;border:1.5px solid var(--line);border-radius:11px;background:var(--surface);font-size:14px}
+#asra-q:focus{border-color:var(--teal);outline:none}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:12px;padding:7px 13px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);transition:all .15s}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.acc{margin-bottom:10px;overflow:hidden;transition:border-color .15s}
+.acc summary{list-style:none;display:flex;align-items:center;gap:14px;padding:15px 18px;cursor:pointer;user-select:none}
+.acc summary::-webkit-details-marker{display:none}
+.acc[open]{border-color:#BED4D3}
+.acc .drug{flex:1;min-width:0}
+.acc .drug .nm{font-family:var(--disp);font-weight:600;font-size:15.5px;letter-spacing:-.01em}
+.acc .drug .cls{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-top:1px}
+.acc .hold-pill{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--teal-deep);background:var(--teal-tint);border-radius:8px;padding:5px 10px;white-space:nowrap;flex:none}
+.acc .hold-pill.none{color:var(--ink-soft);background:#EDF2F3}
+.acc .caret{flex:none;transition:transform .2s;color:var(--ink-faint)}
+.acc[open] .caret{transform:rotate(180deg)}
+.acc-body{padding:2px 18px 18px;border-top:1px dashed var(--line)}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}
+.stat{background:#F7FAFA;border:1px solid var(--line-soft);border-radius:10px;padding:11px 13px}
+.stat .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px}
+.stat .v{font-size:13.5px;font-weight:600;line-height:1.35}
+.stat.hi .v{color:var(--teal-deep)}
+.acc-body ul{margin:6px 0 0;padding-left:18px;color:var(--ink-soft);font-size:13.5px}
+.acc-body li{margin-bottom:5px}
+.acc-body li b{color:var(--ink);font-weight:600}
+.asra-note{font-size:12.5px;color:var(--ink-faint);margin-top:20px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px}
+.asra-note a{color:var(--teal-deep)}
+.no-hits{text-align:center;color:var(--ink-faint);padding:40px 0;font-size:14px;display:none}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer .mono{font-family:var(--mono)}
+.disclaimer{font-size:11.5px;color:var(--ink-faint);line-height:1.55;max-width:720px}
+
+@media(max-width:640px){
+  .wt-card{flex-wrap:wrap;gap:10px}
+  #wt{font-size:26px;width:96px}
+  .page-head{padding-top:28px}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="brand" onclick="location.hash=''" role="link" tabindex="0" onkeydown="if(event.key==='Enter')location.hash=''">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 14c2-1 3-4 3-6M7 8c0 5 2 8 5 10M12 18c3 1 6 0 8-3"/><circle cx="4" cy="15" r="1.6" fill="#0E7C7B" stroke="none"/><circle cx="20" cy="15" r="1.6" fill="#0E7C7B" stroke="none"/></svg></div>
+      <div class="name">Anesthesia <span>Reference Guide</span></div>
+    </div>
+    <div class="crumb" id="crumb">resource guide <b>/ home</b></div>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <section id="view-home">
+    <div class="hero">
+      <div class="eyebrow">Clinical references &amp; calculators</div>
+      <p style="margin-top:0;font-size:16px">Point-of-care calculators and guideline summaries. Select a tool below.</p>
+    </div>
+    <div class="grid">
+      <button class="tool-card" onclick="location.hash='#/la'">
+        <div class="icon ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/></svg></div>
+        <div>
+          <h3>Local anesthetic calculator</h3>
+          <p>Weight-based maximums with a shared additive budget — see exactly what's left to give.</p>
+        </div>
+        <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </button>
+      <button class="tool-card" onclick="location.hash='#/asra'">
+        <div class="icon ic-ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5-2 8-5.5 8-11V5l-8-3-8 3v6c0 5.5 3 9 8 11z"/><path d="M9.5 12.5 11 14l3.5-3.5"/></svg></div>
+        <div>
+          <h3>ASRA anticoagulation guide</h3>
+          <p>Hold and restart intervals for every agent before neuraxial &amp; deep blocks — 5th edition (2025).</p>
+        </div>
+        <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </button>
+      <div class="tool-card soon">
+        <div class="icon ic-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+        <div>
+          <h3>Next tool</h3>
+          <p>Additional tools — cognitive aids, hemodynamic calculators, airway references — are in development.</p>
+        </div>
+        <span class="tag-soon">Coming soon</span>
+      </div>
+    </div>
+    <footer>
+      <span class="disclaimer">Decision support only — verify against primary sources and institutional policy.</span>
+      <span class="mono">v0.1</span>
+    </footer>
+  </section>
+
+  <!-- ============ LA CALC ============ -->
+  <section id="view-la" hidden>
+    <div class="page-head">
+      <div>
+        <h2>Local anesthetic calculator</h2>
+        <div class="sub">Maximums are additive across agents: every dose given draws from one shared budget. The remaining column already accounts for everything entered.</div>
+      </div>
+      <button class="back" onclick="location.hash=''"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All tools</button>
+    </div>
+
+    <div class="la-controls">
+      <div class="card wt-card">
+        <label for="wt">Patient<br>weight</label>
+        <div class="wt-input-wrap">
+          <input id="wt" type="number" inputmode="decimal" min="1" max="300" placeholder="70" aria-label="Patient weight">
+          <div class="unit-toggle" role="group" aria-label="Weight unit">
+            <button id="u-kg" class="on" onclick="setUnit('kg')">kg</button>
+            <button id="u-lb" onclick="setUnit('lb')">lb</button>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--ink-faint);line-height:1.4" id="wt-echo"></div>
+      </div>
+      <div class="card mode-card">
+        <label style="font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Enter doses in</label>
+        <div class="unit-toggle" role="group" aria-label="Dose entry mode">
+          <button id="m-mg" class="on" onclick="setMode('mg')">mg</button>
+          <button id="m-ml" onclick="setMode('ml')">mL</button>
+        </div>
+      </div>
+      <div class="hint">Dose to <b>lean body weight</b> in obese patients — mg/kg maximums were derived for lean mass, not total body weight.</div>
+    </div>
+
+    <div class="card budget">
+      <div class="row1">
+        <span class="lbl">Total anesthetic budget used</span>
+        <span class="pct"><span id="pct-num">0</span>%<small id="pct-note">of combined maximum</small></span>
+      </div>
+      <div class="syr" id="syr" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Fraction of combined local anesthetic maximum used">
+        <div class="fill" id="syr-fill"></div>
+      </div>
+      <div class="syr-scale"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div>
+      <div class="note" id="budget-note">Enter a weight and any doses already given. Each agent's <b>remaining</b> dose shrinks as the shared budget is spent.</div>
+    </div>
+
+    <div class="last-alert" id="last-alert" role="alert">
+      <h4><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.7 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0z"/></svg> Combined maximum exceeded — LAST risk</h4>
+      <p>Stop injecting. If systemic toxicity develops: call for help and the LAST rescue kit, give <b>20% lipid emulsion 1.5&nbsp;mL/kg bolus</b> (then 0.25&nbsp;mL/kg/min), manage airway with 100% O₂, treat seizures with benzodiazepines, and <b>avoid</b> local anesthetics, β-blockers &amp; calcium channel blockers during ACLS; reduce epinephrine boluses to ≤1&nbsp;µg/kg. Consider ECMO early.</p>
+    </div>
+
+    <div class="card">
+      <div class="tbl-wrap">
+        <table class="doses" id="la-table">
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th class="num">Max<br>mg/kg</th>
+              <th class="num">Patient max</th>
+              <th class="num" id="th-conc" hidden>Conc.</th>
+              <th class="num">Given</th>
+              <th class="num">Remaining to give</th>
+            </tr>
+          </thead>
+          <tbody id="la-body"></tbody>
+        </table>
+      </div>
+      <div class="tbl-foot">
+        <div class="fine">Absolute ceilings apply regardless of weight (shown when they cap the dose). % solution × 10 = mg/mL. Values reflect commonly cited maxima for healthy adults; reduce for cardiac disease, hepatic impairment, acidosis, pregnancy, and extremes of age.</div>
+        <button class="clear-btn" onclick="clearDoses()">Reset doses</button>
+      </div>
+    </div>
+
+    <footer>
+      <span class="disclaimer">Decision support only — verify doses independently. Not a substitute for clinical judgment.</span>
+      <span class="mono">LA · additive model</span>
+    </footer>
+  </section>
+
+  <!-- ============ ASRA ============ -->
+  <section id="view-asra" hidden>
+    <div class="page-head">
+      <div>
+        <h2>ASRA anticoagulation guide</h2>
+        <div class="sub">Hold and restart intervals for neuraxial and deep plexus/peripheral blocks, per the ASRA Pain Medicine evidence-based guidelines, <b>5th edition (Jan 2025)</b>.</div>
+      </div>
+      <button class="back" onclick="location.hash=''"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All tools</button>
+    </div>
+
+    <div class="asra-bar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="asra-q" type="search" placeholder="Search an agent — apixaban, Lovenox, Plavix…" aria-label="Search anticoagulants">
+      </div>
+      <div class="chips" id="asra-chips"></div>
+    </div>
+
+    <div id="asra-list"></div>
+    <div class="no-hits" id="no-hits">No agents match that search.</div>
+
+    <div class="asra-note">
+      <b>Scope notes.</b> Deep plexus and deep peripheral blocks follow the same rules as neuraxial techniques; for superficial/compressible sites, weigh compressibility, vascularity, and the consequence of bleeding. Recommendations assume monotherapy — combinations of hemostasis-altering drugs are additive. In select high-risk parturients needing urgent intervention, general anesthesia may carry more risk than neuraxial, and exceptions may be appropriate.<br><br>
+      Source: Kopp SL, Vandermeulen E, McBane RD, et al. <i>Regional anesthesia in the patient receiving antithrombotic or thrombolytic therapy</i>, ASRA Pain Medicine Evidence-Based Guidelines (5th ed). Reg Anesth Pain Med, Jan 2025.
+    </div>
+
+    <footer>
+      <span class="disclaimer">Decision support only — confirm against the full guideline and institutional policy before proceeding.</span>
+      <span class="mono">ASRA · 5e 2025</span>
+    </footer>
+  </section>
+</div>
+
+<script>
+/* ================= LA CALCULATOR ================= */
+const AGENTS=[
+ {id:'lido',    name:'Lidocaine',       sub:'plain',        mgkg:4.5, cap:300,  concs:[0.5,1,1.5,2],  def:1},
+ {id:'lidoE',   name:'Lidocaine',       sub:'with epi',     mgkg:7,   cap:500,  concs:[0.5,1,1.5,2],  def:1},
+ {id:'bupi',    name:'Bupivacaine',     sub:'plain',        mgkg:2.5, cap:175,  concs:[0.25,0.5,0.75],def:0.25},
+ {id:'bupiE',   name:'Bupivacaine',     sub:'with epi',     mgkg:3,   cap:225,  concs:[0.25,0.5,0.75],def:0.25},
+ {id:'ropi',    name:'Ropivacaine',     sub:'',             mgkg:3,   cap:225,  concs:[0.2,0.5,0.75,1],def:0.5},
+ {id:'mepi',    name:'Mepivacaine',     sub:'plain',        mgkg:4.5, cap:400,  concs:[1,1.5,2],      def:1.5},
+ {id:'mepiE',   name:'Mepivacaine',     sub:'with epi',     mgkg:7,   cap:550,  concs:[1,1.5,2],      def:1.5},
+ {id:'chloro',  name:'Chloroprocaine',  sub:'',             mgkg:11,  cap:800,  concs:[2,3],          def:3},
+ {id:'prilo',   name:'Prilocaine',      sub:'',             mgkg:8,   cap:600,  concs:[1,2],          def:1},
+];
+let unit='kg', mode='mg';
+const given={}, concSel={};
+AGENTS.forEach(a=>{given[a.id]=0;concSel[a.id]=a.def;});
+
+const $=id=>document.getElementById(id);
+const kg=()=>{const v=parseFloat($('wt').value); if(!v||v<=0)return 0; return unit==='kg'?v:v*0.45359237;};
+const maxMg=a=>{const w=kg(); if(!w)return 0; return Math.min(a.mgkg*w, a.cap);};
+const fmt=(n,d=0)=>n.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:0});
+
+function buildLA(){
+  const tb=$('la-body'); tb.innerHTML='';
+  AGENTS.forEach(a=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td><div class="agent-name">${a.name}</div>${a.sub?`<div class="agent-sub">${a.sub}</div>`:''}</td>
+      <td class="num"><span class="mono">${a.mgkg}</span></td>
+      <td class="num"><span class="mono" id="max-${a.id}">—</span><div class="dim" id="cap-${a.id}"></div></td>
+      <td class="num conc-cell" hidden><select class="conc-sel" id="conc-${a.id}" aria-label="${a.name} concentration">${a.concs.map(c=>`<option value="${c}" ${c===a.def?'selected':''}>${c}%</option>`).join('')}</select></td>
+      <td class="num"><div class="give-wrap"><input type="number" inputmode="decimal" min="0" id="give-${a.id}" placeholder="0" aria-label="${a.name} ${a.sub} dose given"><span class="u" id="gu-${a.id}">mg</span></div></td>
+      <td class="num"><div class="remain" id="rem-${a.id}">—</div><div class="rowbar"><i id="bar-${a.id}"></i></div></td>`;
+    tb.appendChild(tr);
+    $(`give-${a.id}`).addEventListener('input',e=>{given[a.id]=parseFloat(e.target.value)||0;render();});
+    $(`conc-${a.id}`).addEventListener('change',e=>{concSel[a.id]=parseFloat(e.target.value);render();});
+  });
+}
+
+function setUnit(u){unit=u;$('u-kg').classList.toggle('on',u==='kg');$('u-lb').classList.toggle('on',u==='lb');render();}
+function setMode(m){
+  mode=m;$('m-mg').classList.toggle('on',m==='mg');$('m-ml').classList.toggle('on',m==='ml');
+  document.querySelectorAll('.conc-cell').forEach(c=>c.hidden=(m==='mg'));
+  $('th-conc').hidden=(m==='mg');
+  AGENTS.forEach(a=>$(`gu-${a.id}`).textContent=m);
+  render();
+}
+function clearDoses(){AGENTS.forEach(a=>{given[a.id]=0;$(`give-${a.id}`).value='';});render();}
+
+function givenMg(a){ if(mode==='mg')return given[a.id]; return given[a.id]*concSel[a.id]*10; }
+
+function render(){
+  const w=kg();
+  $('wt-echo').innerHTML = w? (unit==='kg'? `${fmt(w*2.20462,1)} lb`:`${fmt(w,1)} kg`) : '';
+  let frac=0;
+  AGENTS.forEach(a=>{const m=maxMg(a); if(m>0) frac+=givenMg(a)/m;});
+  const pct=frac*100;
+  const remFrac=Math.max(0,1-frac);
+
+  AGENTS.forEach(a=>{
+    const m=maxMg(a);
+    const maxEl=$(`max-${a.id}`),capEl=$(`cap-${a.id}`),remEl=$(`rem-${a.id}`),bar=$(`bar-${a.id}`),inp=$(`give-${a.id}`);
+    inp.classList.toggle('has',given[a.id]>0);
+    if(!w){maxEl.textContent='—';capEl.textContent='';remEl.textContent='—';remEl.classList.remove('zero');bar.style.width='0%';return;}
+    const capped=a.mgkg*w>a.cap;
+    maxEl.textContent=`${fmt(m)} mg`;
+    capEl.textContent=capped?`ceiling ${fmt(a.cap)} mg`:'';
+    const rem=m*remFrac;
+    const mlRem=rem/(concSel[a.id]*10);
+    remEl.classList.toggle('zero',rem<=0.5);
+    remEl.innerHTML = rem<=0.5 ? 'None' :
+      `${fmt(rem)} mg<small>${mode==='ml'? '≈ '+fmt(mlRem,1)+' mL of '+concSel[a.id]+'%' : '≈ '+fmt(mlRem,1)+' mL of '+concSel[a.id]+'%'}</small>`;
+    bar.style.width=Math.min(100,remFrac*100)+'%';
+    bar.style.background = rem<=0.5 ? 'var(--red)' : 'var(--teal)';
+  });
+
+  const syr=$('syr'),fill=$('syr-fill');
+  fill.style.width=Math.min(100,pct)+'%';
+  syr.classList.toggle('warn',pct>=70&&pct<100);
+  syr.classList.toggle('over',pct>=100);
+  syr.setAttribute('aria-valuenow',Math.round(Math.min(999,pct)));
+  $('pct-num').textContent=w?fmt(Math.min(999,pct),pct<10&&pct>0?1:0):'0';
+  $('last-alert').classList.toggle('show',w>0&&pct>=100);
+  $('budget-note').innerHTML = !w ? 'Enter a weight and any doses already given. Each agent\'s <b>remaining</b> dose shrinks as the shared budget is spent.'
+    : pct>=100 ? '<b>No further local anesthetic should be given.</b>'
+    : pct>0 ? `You have used <b>${fmt(pct,pct<10?1:0)}%</b> of the combined maximum — <b>${fmt(100-pct,0)}%</b> of each agent's individual maximum remains available.`
+    : 'No doses logged yet — the full maximum of any single agent is available.';
+}
+
+/* ================= ASRA DATA (5th ed, 2025) ================= */
+const ASRA=[
+ // ---- DOACs ----
+ {n:'Apixaban — high dose',aka:'Eliquis 5 mg BID',cls:'DOAC · factor Xa inhibitor',cat:'DOAC',hold:'72 h',restart:'≥ 24 h after needle / catheter removal',cath:'Remove before resuming; if given with catheter in situ, hold 72 h (or level-guided) before removal',pts:[
+   'If < 72 h since last dose, consider a drug-specific level: residual apixaban <b>&lt; 30 ng/mL</b> or calibrated anti-Xa <b>≤ 0.1 IU/mL</b> is acceptable',
+   'DOAC reversal agents (andexanet, PCC) are <b>not</b> recommended just to enable an elective block']},
+ {n:'Apixaban — low dose',aka:'Eliquis 2.5 mg BID',cls:'DOAC · factor Xa inhibitor',cat:'DOAC',hold:'36 h',restart:'≥ 6 h after needle / catheter removal',cath:'If given with catheter in situ, hold 36 h (or level-guided) before removal',pts:[
+   'If < 36 h, a residual level &lt; 30 ng/mL or anti-Xa ≤ 0.1 IU/mL is acceptable']},
+ {n:'Rivaroxaban — high dose',aka:'Xarelto 15–20 mg daily',cls:'DOAC · factor Xa inhibitor',cat:'DOAC',hold:'72 h',restart:'≥ 24 h after needle / catheter removal',cath:'If given with catheter in situ, hold 72 h (or level-guided) before removal',pts:[
+   'If < 72 h, residual level &lt; 30 ng/mL or calibrated anti-Xa ≤ 0.1 IU/mL is acceptable']},
+ {n:'Rivaroxaban — low dose',aka:'Xarelto 10 mg daily / 2.5 mg BID',cls:'DOAC · factor Xa inhibitor',cat:'DOAC',hold:'24 h · 30 h if CrCl < 30',restart:'≥ 6 h after needle / catheter removal',cath:'If given with catheter in situ, hold 24 h (30 h if CrCl < 30) before removal',pts:[
+   'If < 24 h, residual level &lt; 30 ng/mL or anti-Xa ≤ 0.1 IU/mL is acceptable']},
+ {n:'Edoxaban — high dose',aka:'Savaysa 60 mg daily',cls:'DOAC · factor Xa inhibitor',cat:'DOAC',hold:'72 h',restart:'≥ 24 h after needle / catheter removal',cath:'If given with catheter in situ, hold 72 h (or level-guided) before removal',pts:[
+   'If < 72 h, residual level &lt; 30 ng/mL or calibrated anti-Xa ≤ 0.1 IU/mL is acceptable']},
+ {n:'Dabigatran — high dose',aka:'Pradaxa 150 mg BID',cls:'DOAC · direct thrombin inhibitor',cat:'DOAC',hold:'72 h (CrCl ≥ 50) · 120 h (CrCl 30–49)',restart:'≥ 24 h after needle / catheter removal',cath:'If given with catheter in situ, hold 72–120 h (renal-adjusted) or level &lt; 30 ng/mL before removal',pts:[
+   '<b>Avoid</b> neuraxial/deep blocks if CrCl &lt; 30 unless a dabigatran level is &lt; 30 ng/mL',
+   'Residual dabigatran level &lt; 30 ng/mL acceptable at any interval']},
+ {n:'Dabigatran — low dose',aka:'Pradaxa 110 / 75 mg BID',cls:'DOAC · direct thrombin inhibitor',cat:'DOAC',hold:'48 h',restart:'≥ 6 h after needle / catheter removal',cath:'If given with catheter in situ, hold 48 h or level &lt; 30 ng/mL before removal',pts:[
+   'Avoid if CrCl &lt; 30 unless level &lt; 30 ng/mL']},
+ // ---- Heparins ----
+ {n:'Heparin — IV infusion',aka:'unfractionated heparin drip',cls:'Heparin · unfractionated',cat:'Heparin',hold:'4–6 h + normal coags',restart:'≥ 1 h after needle placement',cath:'Do not maintain catheters on a therapeutic infusion; if unanticipated, monitor neuro closely with dilute LA solutions',pts:[
+   'Confirm aPTT/coagulation status normal before block',
+   'Platelet count before block/catheter removal if on heparin &gt; 4 days (HIT)',
+   'Bloody/traumatic placement does not mandate cancellation — discuss risk–benefit with the surgeon',
+   'Full cardiac-surgery heparinization: do not maintain neuraxial or deep catheters']},
+ {n:'Heparin SQ — low dose',aka:'5,000 U BID or TID prophylaxis',cls:'Heparin · unfractionated',cat:'Heparin',hold:'4–6 h (or normal coags)',restart:'Immediately after catheter removal',cath:'Catheters may be maintained; remove 4–6 h after last dose',pts:[
+   'Platelet count if on heparin &gt; 4 days']},
+ {n:'Heparin SQ — higher dose',aka:'7,500–10,000 U BID (≤ 20,000 U/day)',cls:'Heparin · unfractionated',cat:'Heparin',hold:'12 h + normal coags',restart:'Individualized; confirm hemostasis',cath:'Safety of catheters with &gt; 5,000 U doses or &gt; 15,000 U/day not established — individualize with enhanced neuro monitoring',pts:[]},
+ {n:'Heparin SQ — therapeutic',aka:'> 10,000 U/dose or > 20,000 U/day',cls:'Heparin · unfractionated',cat:'Heparin',hold:'24 h + normal coags',restart:'Individualized; confirm hemostasis',cath:'Avoid indwelling catheters at these doses',pts:[]},
+ {n:'LMWH — low dose (prophylactic)',aka:'enoxaparin 40 mg daily / 30 mg BID',cls:'Low-molecular-weight heparin',cat:'Heparin',hold:'12 h',restart:'First dose ≥ 12 h after needle/catheter placement',cath:'Daily dosing: catheter may stay — remove 12 h after last dose, next dose ≥ 4 h after removal. BID dosing: remove catheter before starting; dose ≥ 4 h after removal',pts:[
+   'If < 12 h, consider anti-Xa: suggested residual ≤ 0.1 IU/mL',
+   'Single-daily: second postop dose no sooner than 24 h after the first',
+   'No concomitant antiplatelets/heparin/anticoagulants with an indwelling catheter',
+   'Platelet count if on LMWH &gt; 4 days; traumatic placement → delay first dose 24 h']},
+ {n:'LMWH — high dose (therapeutic)',aka:'enoxaparin 1 mg/kg BID / 1.5 mg/kg daily',cls:'Low-molecular-weight heparin',cat:'Heparin',hold:'24 h',restart:'≥ 24 h post-op (48–72 h if high-bleeding-risk surgery)',cath:'Remove catheter ≥ 4 h before first postoperative dose',pts:[
+   'If < 24 h, consider anti-Xa (esp. age &gt; 75 or CrCl ≤ 30): suggested residual ≤ 0.1 IU/mL']},
+ {n:'Fondaparinux — low dose',aka:'Arixtra 2.5 mg daily',cls:'Indirect factor Xa inhibitor',cat:'Heparin',hold:'36 h (young) · 42 h (elderly) · 58 h if CrCl 30–50',restart:'Catheter out ≥ 6 h before first dose',cath:'Remove catheter at least 6 h before the first postoperative dose',pts:[
+   '<b>Avoid</b> neuraxial/deep blocks if CrCl &lt; 30 (t½ ≈ 72 h)',
+   'If earlier block considered: fondaparinux-calibrated anti-Xa ≤ 0.1 IU/mL']},
+ {n:'Fondaparinux — high dose',aka:'Arixtra 5–10 mg daily',cls:'Indirect factor Xa inhibitor',cat:'Heparin',hold:'70 h (young) · 105 h (elderly)',restart:'Catheter out ≥ 6 h before first dose',cath:'Remove catheter at least 6 h before the first postoperative dose',pts:[
+   'Fondaparinux-calibrated anti-Xa ≤ 0.1 IU/mL if earlier block considered']},
+ // ---- VKA ----
+ {n:'Warfarin',aka:'Coumadin',cls:'Vitamin K antagonist',cat:'VKA',hold:'5 days + normalized INR',restart:'Per surgical plan; monitor INR daily during epidural analgesia',cath:'Remove when INR < 1.5; INR 1.5–3 remove with caution; INR > 3 hold/reduce warfarin with catheter in place',pts:[
+   'Check INR before block if first dose &gt; 24 h ago or ≥ 2 doses given',
+   'Continue neuro checks ≥ 48 h after catheter removal; use dilute LA solutions to permit motor assessment',
+   'For urgent reversal: vitamin K, PCC, or FFP per institutional practice']},
+ // ---- Antiplatelets ----
+ {n:'Aspirin & NSAIDs',aka:'ASA, ibuprofen, ketorolac…',cls:'Antiplatelet · COX inhibitors',cat:'Antiplatelet',hold:'No hold required',restart:'No restriction',cath:'No added restriction on placement, maintenance, or removal',pts:[
+   'No added risk for neuraxial or deep blocks as monotherapy',
+   'Caution when combined with other hemostasis-altering drugs — effects are additive']},
+ {n:'Clopidogrel',aka:'Plavix',cls:'Antiplatelet · thienopyridine',cat:'Antiplatelet',hold:'5–7 days',restart:'Immediately after needle/catheter removal (≥ 6 h if a loading dose is given)',cath:'May maintain catheter 1–2 days given delayed onset — only if no loading dose',pts:[]},
+ {n:'Prasugrel',aka:'Effient',cls:'Antiplatelet · thienopyridine',cat:'Antiplatelet',hold:'7–10 days',restart:'Immediately after removal (≥ 6 h if loading dose)',cath:'Do not maintain catheters — onset is rapid',pts:[]},
+ {n:'Ticagrelor',aka:'Brilinta',cls:'Antiplatelet · P2Y12 inhibitor',cat:'Antiplatelet',hold:'5 days',restart:'Immediately after removal (≥ 6 h if loading dose)',cath:'Do not maintain catheters — onset is rapid',pts:[]},
+ {n:'Cangrelor',aka:'Kengreal (IV)',cls:'Antiplatelet · IV P2Y12 inhibitor',cat:'Antiplatelet',hold:'3 h',restart:'≥ 8 h after catheter removal',cath:'Remove catheters before reinstitution',pts:[]},
+ {n:'Cilostazol',aka:'Pletal',cls:'Antiplatelet · PDE-3 inhibitor',cat:'Antiplatelet',hold:'2 days',restart:'≥ 6 h after catheter removal',cath:'Remove catheters before restarting',pts:[]},
+ {n:'GP IIb/IIIa inhibitors',aka:'abciximab · eptifibatide · tirofiban',cls:'Antiplatelet · GP IIb/IIIa',cat:'Antiplatelet',hold:'Abciximab 24–48 h · eptifibatide/tirofiban 4–8 h',restart:'Contraindicated within 4 weeks of surgery',cath:'If emergently given with a catheter: dilute LA infusion, close neuro monitoring; time removal to thrombotic risk',pts:[
+   'Wait until platelet aggregation has recovered before needle placement',
+   'Caution with residual NSAID effect in dual therapy']},
+ // ---- Others ----
+ {n:'Thrombolytics',aka:'tPA, alteplase, tenecteplase…',cls:'Fibrinolytic',cat:'Other',hold:'48 h + normal coags incl. fibrinogen',restart:'Avoid thrombolytics ≥ 10 days after puncture of non-compressible vessels',cath:'No definitive removal rule — check fibrinogen (last factor to recover) to time removal; neuro checks q2h ≥ 48 h',pts:[
+   'If block occurred near time of lytics: dilute LA infusion only, neuro checks every 2 h for ≥ 48 h']},
+ {n:'Herbal supplements',aka:'garlic · ginkgo · ginseng',cls:'Herbals',cat:'Other',hold:'No hold required',restart:'No restriction',cath:'No added restriction',pts:[
+   'Alone, do not create risk sufficient to interfere with regional techniques — no mandatory discontinuation']},
+];
+const CATS=['All','DOAC','Heparin','VKA','Antiplatelet','Other'];
+let activeCat='All';
+
+function buildASRA(){
+  const chips=$('asra-chips');
+  chips.innerHTML=CATS.map(c=>`<button class="chip ${c==='All'?'on':''}" data-c="${c}">${c==='VKA'?'Warfarin':c}</button>`).join('');
+  chips.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+    activeCat=b.dataset.c;
+    chips.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));
+    filterASRA();
+  }));
+  const list=$('asra-list');
+  list.innerHTML=ASRA.map((d,i)=>`
+    <details class="acc card" data-i="${i}">
+      <summary>
+        <div class="drug"><div class="nm">${d.n}</div><div class="cls">${d.aka} · ${d.cls}</div></div>
+        <span class="hold-pill ${/^No hold/.test(d.hold)?'none':''}">${/^No hold/.test(d.hold)?'No hold':'Hold '+d.hold.split('·')[0].trim()}</span>
+        <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <div class="stat-row">
+          <div class="stat hi"><div class="k">Hold before block</div><div class="v">${d.hold}</div></div>
+          <div class="stat"><div class="k">Restart after</div><div class="v">${d.restart}</div></div>
+          <div class="stat"><div class="k">Neuraxial catheter</div><div class="v" style="font-weight:450">${d.cath}</div></div>
+        </div>
+        ${d.pts.length?`<ul>${d.pts.map(p=>`<li>${p}</li>`).join('')}</ul>`:''}
+      </div>
+    </details>`).join('');
+  $('asra-q').addEventListener('input',filterASRA);
+}
+function filterASRA(){
+  const q=$('asra-q').value.trim().toLowerCase();
+  let hits=0;
+  document.querySelectorAll('#asra-list .acc').forEach(el=>{
+    const d=ASRA[+el.dataset.i];
+    const txt=(d.n+' '+d.aka+' '+d.cls).toLowerCase();
+    const show=(activeCat==='All'||d.cat===activeCat)&&(!q||txt.includes(q));
+    el.style.display=show?'':'none';
+    if(show)hits++;
+  });
+  $('no-hits').style.display=hits?'none':'block';
+}
+
+/* ================= ROUTER ================= */
+const VIEWS={'':'view-home','#/la':'view-la','#/asra':'view-asra'};
+const CRUMBS={'':'resource guide <b>/ home</b>','#/la':'resource guide <b>/ local anesthetics</b>','#/asra':'resource guide <b>/ asra 5e</b>'};
+function route(){
+  const h=VIEWS[location.hash]!==undefined?location.hash:'';
+  Object.values(VIEWS).forEach(v=>$(v).hidden=true);
+  $(VIEWS[h]).hidden=false;
+  $('crumb').innerHTML=CRUMBS[h];
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+buildLA();
+buildASRA();
+$('wt').addEventListener('input',render);
+setMode('mg');
+route();
+render();
+</script>
+</body>
+</html>
