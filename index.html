@@ -496,6 +496,64 @@ td .dim{color:var(--ink-faint);font-size:11.5px;font-family:var(--mono)}
 .cx-nav button{font-family:var(--mono);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:99px;padding:8px 13px;background:var(--surface);transition:border-color .15s;max-width:47%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cx-nav button:hover:not(:disabled){border-color:var(--teal)}
 .cx-nav button:disabled{opacity:.3;cursor:default}
+/* medications */
+.med-intro{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.med-intro b{color:var(--ink)}
+.med-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+.med-legend span{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+.med-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.med-group{margin-bottom:24px}
+.med-group-h{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.med-group-h .dot{width:12px;height:12px;border-radius:4px;flex:none}
+.med-group-h .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.med-group-h .ct{font-family:var(--mono);font-size:11px;color:var(--ink-faint);border:1px solid var(--line);border-radius:99px;padding:2px 9px}
+.med-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.med-card{display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--slate);border-radius:11px;padding:11px 13px;transition:transform .1s,box-shadow .1s,border-color .1s;font-family:inherit}
+.med-card:hover{transform:translateY(-1px);box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}
+.med-card .medtx{min-width:0;flex:1}
+.med-card .mednm{font-size:13.5px;font-weight:600;letter-spacing:-.01em;line-height:1.2;display:block}
+.med-card .medshort{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-top:2px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.med-pill{flex:none;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.02em;padding:3px 9px;border-radius:99px;color:#fff}
+.med-pill.continue{background:#1F7A4D} .med-pill.hold{background:#C0392B} .med-pill.adjust{background:#C07A16} .med-pill.depends{background:#3E5265}
+.med-titlebar{border-radius:14px 14px 0 0;padding:18px 24px;color:#fff}
+.med-titlebar h2{font-family:var(--disp);font-size:23px;font-weight:700;letter-spacing:-.02em;margin:0;color:#fff}
+.med-titlebar .medsub{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.92);margin-top:4px}
+.med-body{border:1px solid var(--line);border-top:none;border-radius:0 0 14px 14px;background:var(--surface);padding:16px 24px 20px}
+.med-badge{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:6px 14px;border-radius:99px;color:#fff;margin-bottom:6px}
+.med-badge.continue{background:#1F7A4D} .med-badge.hold{background:#C0392B} .med-badge.adjust{background:#C07A16} .med-badge.depends{background:#3E5265}
+.med-sec{padding:13px 0;border-bottom:1px solid var(--line-soft)}
+.med-sec:last-of-type{border-bottom:none}
+.med-sec h3{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 6px}
+.med-sec p{font-size:14px;color:var(--ink);line-height:1.6;margin:0}
+.med-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.med-nav button{font-family:var(--mono);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:99px;padding:8px 13px;background:var(--surface);transition:border-color .15s;max-width:47%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.med-nav button:hover:not(:disabled){border-color:var(--teal)}
+.med-nav button:disabled{opacity:.3;cursor:default}
+.med-group.cv .dot{background:#C0392B} .med-group.cv .lbl{color:#C0392B}
+.med-card.cv{border-left-color:#C0392B}
+.med-titlebar.cv{background:#C0392B}
+.med-group.clot .dot{background:#8E2862} .med-group.clot .lbl{color:#8E2862}
+.med-card.clot{border-left-color:#8E2862}
+.med-titlebar.clot{background:#8E2862}
+.med-group.endo .dot{background:#C07A16} .med-group.endo .lbl{color:#C07A16}
+.med-card.endo{border-left-color:#C07A16}
+.med-titlebar.endo{background:#C07A16}
+.med-group.resp .dot{background:#2E86AB} .med-group.resp .lbl{color:#2E86AB}
+.med-card.resp{border-left-color:#2E86AB}
+.med-titlebar.resp{background:#2E86AB}
+.med-group.neuro .dot{background:#7D3C98} .med-group.neuro .lbl{color:#7D3C98}
+.med-card.neuro{border-left-color:#7D3C98}
+.med-titlebar.neuro{background:#7D3C98}
+.med-group.pain .dot{background:#1F7A4D} .med-group.pain .lbl{color:#1F7A4D}
+.med-card.pain{border-left-color:#1F7A4D}
+.med-titlebar.pain{background:#1F7A4D}
+.med-group.herb .dot{background:#566573} .med-group.herb .lbl{color:#566573}
+.med-card.herb{border-left-color:#566573}
+.med-titlebar.herb{background:#566573}
+.med-group.other .dot{background:#147A8B} .med-group.other .lbl{color:#147A8B}
+.med-card.other{border-left-color:#147A8B}
+.med-titlebar.other{background:#147A8B}
+
 .cx-group.cv .dot{background:#C0392B} .cx-group.cv .lbl{color:#C0392B}
 .cx-card.cv{border-left-color:#C0392B}
 .cx-titlebar.cv{background:#C0392B}
@@ -631,6 +689,14 @@ footer .mono{font-family:var(--mono)}
         <div>
           <h3>Comorbidity implications</h3>
           <p>100 conditions by organ system — the preoperative, intraoperative, and postoperative anesthetic implications of each.</p>
+        </div>
+        <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </button>
+      <button class="tool-card" onclick="location.hash='#/meds'">
+        <div class="icon ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="12" height="8" rx="4" transform="rotate(-45 9 12)"/><path d="M9.5 6.5l4 4"/><path d="M18 14v3m0 0v3m0-3h3m-3 0h-3"/></svg></div>
+        <div>
+          <h3>Med hold guidelines</h3>
+          <p>Hold or continue — 73 drugs by class, each with the timing and the reason behind the perioperative recommendation.</p>
         </div>
         <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </button>
@@ -931,6 +997,26 @@ footer .mono{font-family:var(--mono)}
       <button class="back" onclick="location.hash='#/cx'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All conditions</button>
     </div>
     <div id="cx-detail" class="tee-detail-wrap"></div>
+  </section>
+
+  <!-- ============ MEDICATION MANAGEMENT ============ -->
+  <section id="view-meds" hidden>
+    <div class="page-head">
+      <div>
+        <h2>Med hold guidelines</h2>
+        <div class="sub">Perioperative management of common medications, grouped by class. Tap any drug for the recommendation, its timing, and the rationale.</div>
+      </div>
+      <button class="back" onclick="location.hash=''"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All tools</button>
+    </div>
+    <div class="med-intro">General guidance for elective surgery — <b>timings vary by procedure, bleeding risk, renal function, and institution; always confirm against your local protocol</b> and specialty guidelines (e.g., ACC/AHA, ASRA).</div>
+    <div class="med-legend"><span><i style="background:#1F7A4D"></i>Continue</span><span><i style="background:#C0392B"></i>Hold</span><span><i style="background:#C07A16"></i>Adjust</span><span><i style="background:#3E5265"></i>Individualize</span></div>
+    <div id="med-grid"></div>
+  </section>
+  <section id="view-meds-detail" hidden>
+    <div class="page-head" style="padding-bottom:8px">
+      <button class="back" onclick="location.hash='#/meds'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All medications</button>
+    </div>
+    <div id="med-detail" class="tee-detail-wrap"></div>
   </section>
 </div>
 
@@ -3015,11 +3101,125 @@ function renderCx(id){
 }
 
 
+/* ================= PERIOPERATIVE MEDICATION MANAGEMENT ================= */
+const MEDS=[
+{"id": "betablocker", "cls": "cv", "name": "\u03b2-blockers", "short": "metoprolol, atenolol, carvedilol", "action": "continue", "timing": "Continue through the morning of surgery.", "rationale": "Chronic \u03b2-blockade is protective, and abrupt withdrawal causes rebound tachycardia, hypertension and myocardial ischemia.", "notes": "Do NOT start \u03b2-blockade acutely on the day of surgery in a naive patient \u2014 the POISE trial showed increased stroke and death."},
+{"id": "acei", "cls": "cv", "name": "ACE inhibitors", "short": "lisinopril, enalapril, ramipril", "action": "depends", "timing": "Commonly held the morning of surgery; continue when prescribed for heart failure or poorly controlled hypertension per the team.", "rationale": "They blunt angiotensin-mediated compensatory vasoconstriction under anesthesia and can cause refractory hypotension, balanced against blood-pressure control.", "resume": "Restart once the patient is euvolemic and hemodynamically stable."},
+{"id": "arb", "cls": "cv", "name": "ARBs", "short": "losartan, valsartan", "action": "depends", "timing": "Often held the morning of surgery; individualize as for ACE inhibitors.", "rationale": "Like ACE inhibitors they blunt compensatory vasoconstriction, and the resulting induction hypotension is often more pronounced and refractory.", "resume": "Restart once euvolemic and stable."},
+{"id": "ccb", "cls": "cv", "name": "Calcium channel blockers", "short": "amlodipine, diltiazem, verapamil", "action": "continue", "timing": "Continue including the day of surgery.", "rationale": "They maintain blood-pressure and rate control with minimal anesthetic interaction, and continuation avoids rebound hypertension."},
+{"id": "diuretic", "cls": "cv", "name": "Diuretics", "short": "furosemide, hydrochlorothiazide", "action": "hold", "timing": "Usually hold the morning of surgery.", "rationale": "Superimposing diuresis on preoperative fasting risks intraoperative hypovolemia and hypokalemia.", "notes": "A loop diuretic can still be given intraoperatively if needed for heart failure."},
+{"id": "statin", "cls": "cv", "name": "Statins", "short": "atorvastatin, rosuvastatin", "action": "continue", "timing": "Continue perioperatively (and consider initiating in vascular patients).", "rationale": "Plaque stabilization and pleiotropic effects reduce perioperative cardiac events."},
+{"id": "clonidine", "cls": "cv", "name": "Central \u03b12-agonists", "short": "clonidine (oral or patch)", "action": "continue", "timing": "Continue, including the transdermal patch.", "rationale": "Abrupt withdrawal causes severe rebound hypertension."},
+{"id": "digoxin", "cls": "cv", "name": "Digoxin", "short": "rate control / heart failure", "action": "continue", "timing": "Continue; check level and electrolytes.", "rationale": "Maintains rate control; its narrow therapeutic index and dependence on potassium make electrolyte checks important."},
+{"id": "antiarrhythmic", "cls": "cv", "name": "Antiarrhythmics", "short": "amiodarone, sotalol", "action": "continue", "timing": "Continue.", "rationale": "Maintaining rhythm control is essential; amiodarone's very long half-life makes brief interruption moot, but monitor for bradycardia and QT prolongation."},
+{"id": "nitrate", "cls": "cv", "name": "Nitrates", "short": "isosorbide, nitroglycerin", "action": "continue", "timing": "Continue anti-anginal therapy.", "rationale": "Ongoing coronary vasodilation is beneficial and abrupt cessation can provoke rebound angina."},
+{"id": "aldosterone", "cls": "cv", "name": "Aldosterone antagonists", "short": "spironolactone, eplerenone", "action": "depends", "timing": "Often held the morning of surgery; check potassium.", "rationale": "They combine a diuretic effect with a risk of hyperkalemia, which fasting and any renal impairment can worsen."},
+{"id": "alphablocker", "cls": "cv", "name": "\u03b11-blockers", "short": "doxazosin, tamsulosin", "action": "continue", "timing": "Continue for blood-pressure or BPH indications.", "rationale": "Continuation maintains control; note that tamsulosin causes intraoperative floppy iris syndrome \u2014 inform the ophthalmologist before cataract surgery."},
+{"id": "aspirin", "cls": "clot", "name": "Aspirin", "short": "antiplatelet", "action": "depends", "timing": "Continue for secondary prevention, a recent coronary stent or high cardiac risk; hold ~7 days for primary prevention or when the bleeding risk is high (e.g., intracranial or spine surgery).", "rationale": "Irreversible platelet inhibition lasts the platelet lifespan (~7\u201310 days), so the decision balances thrombotic protection against surgical bleeding."},
+{"id": "clopidogrel", "cls": "clot", "name": "Clopidogrel", "short": "P2Y12 inhibitor", "action": "hold", "timing": "Hold 5\u20137 days before surgery.", "rationale": "Irreversible P2Y12 inhibition requires several days for platelet recovery.", "notes": "Within a mandatory DAPT window after stenting, defer elective surgery and consult cardiology rather than stopping."},
+{"id": "ticagrelor", "cls": "clot", "name": "Ticagrelor", "short": "P2Y12 inhibitor", "action": "hold", "timing": "Hold 3\u20135 days before surgery.", "rationale": "A reversible P2Y12 inhibitor with faster offset than clopidogrel, so a shorter hold suffices."},
+{"id": "prasugrel", "cls": "clot", "name": "Prasugrel", "short": "P2Y12 inhibitor", "action": "hold", "timing": "Hold 7\u201310 days before surgery.", "rationale": "The most potent, irreversible P2Y12 inhibitor, requiring the longest hold for platelet recovery."},
+{"id": "warfarin", "cls": "clot", "name": "Warfarin", "short": "vitamin-K antagonist", "action": "hold", "timing": "Stop ~5 days before surgery and check the INR (target <1.5 for most procedures); bridge with heparin/LMWH only for high thromboembolic risk (mechanical mitral valve, recent VTE, AF with prior stroke).", "rationale": "Its long half-life means the INR must be allowed to normalize, and bridging balances thrombosis against bleeding.", "resume": "Resume ~12\u201324 h postoperatively once hemostasis is secure."},
+{"id": "apixaban", "cls": "clot", "name": "Apixaban", "short": "factor Xa inhibitor (DOAC)", "action": "hold", "timing": "Hold 48 h for low bleeding-risk surgery and 72 h for high bleeding-risk surgery, adjusting for renal function.", "rationale": "Predictable pharmacokinetics allow timed interruption without routine bridging."},
+{"id": "rivaroxaban", "cls": "clot", "name": "Rivaroxaban", "short": "factor Xa inhibitor (DOAC)", "action": "hold", "timing": "Hold 48 h (low bleeding risk) to 72 h (high bleeding risk), with renal adjustment.", "rationale": "As for apixaban \u2014 timed interruption based on bleeding risk and renal clearance; no routine bridging."},
+{"id": "dabigatran", "cls": "clot", "name": "Dabigatran", "short": "direct thrombin inhibitor (DOAC)", "action": "hold", "timing": "Hold according to creatinine clearance \u2014 roughly 48 h if renal function is normal, longer if impaired.", "rationale": "It is substantially renally cleared, so impaired clearance prolongs its effect; idarucizumab reverses it if emergent surgery is needed."},
+{"id": "edoxaban", "cls": "clot", "name": "Edoxaban", "short": "factor Xa inhibitor (DOAC)", "action": "hold", "timing": "Hold ~24\u201348 h with renal adjustment.", "rationale": "A once-daily factor Xa inhibitor with renal clearance; timed interruption by bleeding risk and renal function."},
+{"id": "lmwh", "cls": "clot", "name": "LMWH", "short": "enoxaparin, dalteparin", "action": "hold", "timing": "Hold therapeutic dosing \u226524 h (prophylactic \u226512 h) before surgery or neuraxial block.", "rationale": "These intervals follow ASRA guidance to avoid surgical and neuraxial-hematoma bleeding."},
+{"id": "ufh", "cls": "clot", "name": "Unfractionated heparin", "short": "IV infusion", "action": "hold", "timing": "Stop an IV infusion 4\u20136 h before and confirm a normal aPTT.", "rationale": "Its short half-life allows quick, verifiable reversal of effect."},
+{"id": "fondaparinux", "cls": "clot", "name": "Fondaparinux", "short": "factor Xa inhibitor", "action": "hold", "timing": "Requires a prolonged hold (~36\u201342 h or longer) and caution with neuraxial techniques.", "rationale": "Its long half-life and lack of a routine reversal agent mandate a longer interruption."},
+{"id": "cilostazol", "cls": "clot", "name": "Cilostazol / dipyridamole", "short": "antiplatelet", "action": "hold", "timing": "Hold ~2 days (cilostazol) or per product before surgery.", "rationale": "Antiplatelet and vasodilatory effects add bleeding risk."},
+{"id": "metformin", "cls": "endo", "name": "Metformin", "short": "biguanide", "action": "hold", "timing": "Commonly held the day of surgery; hold if renal impairment or iodinated contrast is expected.", "rationale": "Holding avoids hypoglycemia while NPO and the rare risk of lactic acidosis with hypoperfusion or renal impairment."},
+{"id": "sulfonylurea", "cls": "endo", "name": "Sulfonylureas", "short": "glipizide, glyburide", "action": "hold", "timing": "Hold the day of surgery.", "rationale": "They stimulate insulin release and cause hypoglycemia in a fasting patient."},
+{"id": "sglt2", "cls": "endo", "name": "SGLT2 inhibitors", "short": "empagliflozin, dapagliflozin", "action": "hold", "timing": "Hold 3\u20134 days before surgery.", "rationale": "They can precipitate euglycemic diabetic ketoacidosis, which is easily missed because glucose is near-normal."},
+{"id": "glp1", "cls": "endo", "name": "GLP-1 receptor agonists", "short": "semaglutide, liraglutide, tirzepatide", "action": "hold", "timing": "Consider holding \u2014 daily agents on the day of surgery, weekly agents ~1 week \u2014 and treat as a full stomach if not held.", "rationale": "They delay gastric emptying and raise aspiration risk; where available, point-of-care gastric ultrasound can assess residual contents.", "notes": "Guidance is evolving \u2014 follow current institutional policy."},
+{"id": "dpp4", "cls": "endo", "name": "DPP-4 inhibitors", "short": "sitagliptin, linagliptin", "action": "hold", "timing": "Generally held the day of surgery.", "rationale": "They offer little benefit while NPO, though their hypoglycemia risk is low."},
+{"id": "insulin_basal", "cls": "endo", "name": "Long-acting (basal) insulin", "short": "glargine, detemir, degludec", "action": "adjust", "timing": "Give a reduced dose (commonly ~75\u201380%) the night before or morning of surgery.", "rationale": "Basal insulin is still needed to prevent ketosis, but a full dose while NPO risks hypoglycemia."},
+{"id": "insulin_prandial", "cls": "endo", "name": "Rapid/short-acting & mixed insulin", "short": "aspart, lispro, 70/30", "action": "hold", "timing": "Hold prandial doses while NPO and cover with a correction scale.", "rationale": "Giving mealtime insulin without food causes hypoglycemia."},
+{"id": "insulin_pump", "cls": "endo", "name": "Insulin pump", "short": "continuous subcutaneous infusion", "action": "adjust", "timing": "Continue the basal rate (or a reduced rate) for short cases and agree a plan for longer surgery; monitor glucose closely.", "rationale": "An abrupt loss of basal insulin risks ketosis, while unadjusted delivery while NPO risks hypoglycemia."},
+{"id": "tzd", "cls": "endo", "name": "Thiazolidinediones", "short": "pioglitazone", "action": "hold", "timing": "Hold the day of surgery.", "rationale": "They cause fluid retention and offer no acute benefit while NPO."},
+{"id": "thyroid", "cls": "endo", "name": "Thyroid hormone", "short": "levothyroxine", "action": "continue", "timing": "Continue.", "rationale": "Its long half-life makes a single missed dose inconsequential, and continuity maintains the euthyroid state."},
+{"id": "antithyroid", "cls": "endo", "name": "Antithyroid drugs", "short": "methimazole, PTU", "action": "continue", "timing": "Continue.", "rationale": "Maintaining the euthyroid state prevents perioperative thyrotoxicosis; withdrawal risks thyroid storm."},
+{"id": "steroid", "cls": "endo", "name": "Chronic corticosteroids", "short": "prednisone, hydrocortisone", "action": "continue", "timing": "Continue and add stress-dose steroids for moderate-to-major surgery.", "rationale": "Chronic use suppresses the HPA axis so the patient cannot mount the cortisol response that surgical stress demands."},
+{"id": "estrogen", "cls": "endo", "name": "Estrogen / OCP / HRT", "short": "combined hormonal therapy", "action": "depends", "timing": "Consider stopping ~4 weeks before major or high-VTE-risk surgery; continue for minor low-risk procedures with prophylaxis.", "rationale": "Estrogen increases venous thromboembolism risk, balanced against contraceptive or symptomatic need."},
+{"id": "serm", "cls": "endo", "name": "SERMs", "short": "tamoxifen, raloxifene", "action": "depends", "timing": "Consider holding before major surgery, weighed against the oncologic indication.", "rationale": "They increase VTE risk, but interrupting cancer therapy has its own consequences \u2014 individualize with the treating team."},
+{"id": "inhaler", "cls": "resp", "name": "Inhaled bronchodilators & steroids", "short": "albuterol, ICS, LABA/LAMA", "action": "continue", "timing": "Continue and give on the day of surgery \u2014 have the patient bring their inhalers.", "rationale": "Maintaining airway control reduces perioperative bronchospasm."},
+{"id": "theophylline", "cls": "resp", "name": "Theophylline", "short": "methylxanthine", "action": "depends", "timing": "Many hold the day of surgery; individualize.", "rationale": "Its narrow therapeutic index, arrhythmogenicity and drug interactions make continuation less clearly beneficial."},
+{"id": "montelukast", "cls": "resp", "name": "Leukotriene modifiers", "short": "montelukast", "action": "continue", "timing": "Continue.", "rationale": "Maintains asthma control with no significant anesthetic interaction."},
+{"id": "aed", "cls": "neuro", "name": "Antiepileptics", "short": "levetiracetam, valproate, etc.", "action": "continue", "timing": "Continue, including the morning of surgery; substitute an IV form if NPO is prolonged.", "rationale": "Missed doses and falling levels precipitate perioperative seizures."},
+{"id": "levodopa", "cls": "neuro", "name": "Parkinson medications", "short": "carbidopa-levodopa", "action": "continue", "timing": "Continue up to and including the morning of surgery, and minimize the interruption.", "rationale": "The short half-life means even a missed dose can cause severe rigidity, aspiration risk and a neuroleptic-malignant-like crisis."},
+{"id": "ssri", "cls": "neuro", "name": "SSRIs", "short": "sertraline, fluoxetine, citalopram", "action": "continue", "timing": "Generally continue.", "rationale": "Abrupt withdrawal causes a discontinuation syndrome; note a small increase in bleeding risk and serotonin-syndrome caution with other serotonergic drugs."},
+{"id": "snri", "cls": "neuro", "name": "SNRIs", "short": "venlafaxine, duloxetine", "action": "continue", "timing": "Generally continue.", "rationale": "As with SSRIs, and venlafaxine has a prominent withdrawal syndrome; watch blood pressure and serotonergic interactions."},
+{"id": "tca", "cls": "neuro", "name": "Tricyclic antidepressants", "short": "amitriptyline, nortriptyline", "action": "continue", "timing": "Continue chronic therapy; individualize high doses.", "rationale": "Continuation avoids withdrawal, but anticholinergic and arrhythmic effects and interaction with indirect sympathomimetics and ketamine warrant caution at high doses."},
+{"id": "maoi", "cls": "neuro", "name": "MAO inhibitors", "short": "phenelzine, tranylcypromine", "action": "depends", "timing": "Either continue with an \u201cMAOI-safe\u201d anesthetic, or, with psychiatric input, stop ~2 weeks before.", "rationale": "They risk a hypertensive crisis with indirect sympathomimetics (ephedrine) and serotonin syndrome with meperidine \u2014 avoid those agents; abrupt cessation risks psychiatric relapse."},
+{"id": "lithium", "cls": "neuro", "name": "Lithium", "short": "mood stabilizer", "action": "depends", "timing": "Continue for minor surgery; consider holding ~72 h before major surgery with anticipated fluid shifts, and monitor levels and electrolytes.", "rationale": "Its narrow therapeutic index and renal handling mean fluid and sodium shifts (and diuretics/NSAIDs) can raise levels toward toxicity; it can also prolong neuromuscular blockade."},
+{"id": "antipsychotic", "cls": "neuro", "name": "Antipsychotics", "short": "quetiapine, risperidone, haloperidol", "action": "continue", "timing": "Continue.", "rationale": "Withdrawal risks relapse; monitor for QT prolongation and hypotension."},
+{"id": "benzo", "cls": "neuro", "name": "Benzodiazepines", "short": "chronic therapy", "action": "continue", "timing": "Continue chronic therapy.", "rationale": "Abrupt withdrawal can precipitate seizures and autonomic instability."},
+{"id": "stimulant", "cls": "neuro", "name": "Stimulants", "short": "amphetamines, methylphenidate", "action": "depends", "timing": "Commonly held the day of surgery; individualize.", "rationale": "Their sympathomimetic effects cause hemodynamic lability and raise anesthetic requirements, while chronic use can deplete catecholamines and predispose to hypotension."},
+{"id": "gabapentinoid", "cls": "neuro", "name": "Gabapentinoids", "short": "gabapentin, pregabalin", "action": "depends", "timing": "Continue established chronic therapy cautiously; avoid new high perioperative doses.", "rationale": "They help neuropathic pain but add sedation and respiratory depression with opioids, especially in the elderly and in OSA."},
+{"id": "nsaid", "cls": "pain", "name": "NSAIDs", "short": "ibuprofen, naproxen, ketorolac", "action": "depends", "timing": "Often held before surgery (roughly 1\u20133 days depending on the agent) when bleeding or renal risk is a concern; may be continued for some procedures.", "rationale": "Reversible platelet inhibition and renal vasoconstriction are balanced against their analgesic and opioid-sparing benefit."},
+{"id": "cox2", "cls": "pain", "name": "COX-2 inhibitors", "short": "celecoxib", "action": "continue", "timing": "Often continued as part of multimodal analgesia (renal caution).", "rationale": "They have minimal effect on platelets, so bleeding risk is low."},
+{"id": "opioid_chronic", "cls": "pain", "name": "Chronic opioids", "short": "long-term opioid therapy", "action": "continue", "timing": "Continue the baseline regimen.", "rationale": "Continuation prevents withdrawal; expect tolerance and higher perioperative requirements, and plan multimodal analgesia."},
+{"id": "methotrexate", "cls": "pain", "name": "Methotrexate", "short": "non-biologic DMARD", "action": "continue", "timing": "Generally continue in rheumatoid arthritis; hold with significant renal impairment.", "rationale": "At usual doses it does not increase infection or impair wound healing, and stopping risks a disease flare."},
+{"id": "biologic", "cls": "pain", "name": "Biologic DMARDs", "short": "TNF inhibitors, etc.", "action": "hold", "timing": "Hold and time surgery at the end of the dosing cycle; resume once wound healing is established and there is no infection.", "rationale": "Their immunosuppression increases infection risk and impairs wound healing."},
+{"id": "hcq", "cls": "pain", "name": "Hydroxychloroquine", "short": "antimalarial DMARD", "action": "continue", "timing": "Continue; manage other non-biologic DMARDs per rheumatology.", "rationale": "It carries low perioperative risk and continuation maintains disease control."},
+{"id": "buprenorphine", "cls": "pain", "name": "Buprenorphine", "short": "partial agonist (OUD/pain)", "action": "depends", "timing": "Current guidance generally favors continuing rather than abruptly stopping; plan multimodal and full-agonist analgesia around it with pain/addiction input.", "rationale": "Continuity avoids destabilizing recovery, and acute pain can still be managed on top of it."},
+{"id": "methadone", "cls": "pain", "name": "Methadone", "short": "full agonist (OUD/pain)", "action": "continue", "timing": "Continue the maintenance dose; add multimodal analgesia for acute pain.", "rationale": "Continuation prevents withdrawal; monitor the QT interval."},
+{"id": "naltrexone", "cls": "pain", "name": "Naltrexone", "short": "opioid antagonist", "action": "hold", "timing": "Stop oral naltrexone ~72 h before surgery; the injectable depot requires planning (~4 weeks) because it blocks opioid analgesia.", "rationale": "Opioid-receptor blockade makes opioids ineffective and can cause a heightened response once it wears off."},
+{"id": "garlic", "cls": "herb", "name": "Garlic, ginkgo, ginseng", "short": "\u201cthe three G\u2019s\u201d", "action": "hold", "timing": "Stop ~7 days before surgery.", "rationale": "They inhibit platelet aggregation and increase bleeding risk (ginseng can also cause hypoglycemia and hypertension)."},
+{"id": "ephedra", "cls": "herb", "name": "Ephedra / ma huang", "short": "sympathomimetic herb", "action": "hold", "timing": "Stop at least 24 h before surgery.", "rationale": "Sympathomimetic effects cause arrhythmias and hypertension, and chronic use depletes catecholamines."},
+{"id": "stjohnswort", "cls": "herb", "name": "St John\u2019s wort", "short": "herbal antidepressant", "action": "hold", "timing": "Stop ~5 days before surgery.", "rationale": "It induces cytochrome P450 enzymes, altering the metabolism of many anesthetic and other drugs, and adds serotonergic interactions."},
+{"id": "kava", "cls": "herb", "name": "Kava", "short": "anxiolytic herb", "action": "hold", "timing": "Stop ~24 h before surgery.", "rationale": "It potentiates GABA and sedatives (increasing anesthetic effect) and is hepatotoxic."},
+{"id": "valerian", "cls": "herb", "name": "Valerian", "short": "sedative herb", "action": "depends", "timing": "Taper rather than stop abruptly, or continue.", "rationale": "Its GABAergic effect means abrupt withdrawal can resemble benzodiazepine withdrawal."},
+{"id": "echinacea", "cls": "herb", "name": "Echinacea", "short": "immune-modulating herb", "action": "hold", "timing": "Stop before surgery.", "rationale": "Immunomodulation may cause allergic reactions and, with long-term use, impaired healing."},
+{"id": "fishoil", "cls": "herb", "name": "Fish oil / omega-3", "short": "supplement", "action": "depends", "timing": "Consider holding ~7 days before high-bleeding-risk surgery.", "rationale": "High doses may have a mild antiplatelet effect."},
+{"id": "vitamine", "cls": "herb", "name": "Vitamin E / high-dose supplements", "short": "supplement", "action": "depends", "timing": "Consider holding before high-bleeding-risk surgery.", "rationale": "High doses can increase bleeding tendency."},
+{"id": "ppi", "cls": "other", "name": "PPIs / H2 blockers", "short": "omeprazole, famotidine", "action": "continue", "timing": "Continue.", "rationale": "They are harmless to continue and provide useful aspiration prophylaxis; stopping risks rebound acid secretion."},
+{"id": "echothiophate", "cls": "other", "name": "Echothiophate eye drops", "short": "ophthalmic anticholinesterase", "action": "continue", "timing": "Continue, but flag the interaction to the anesthesia team.", "rationale": "It irreversibly inhibits plasma cholinesterase, markedly prolonging succinylcholine and ester local anesthetics."},
+{"id": "transdermal", "cls": "other", "name": "Transdermal patches", "short": "nitroglycerin, fentanyl, clonidine, scopolamine", "action": "continue", "timing": "Continue; do not abruptly remove clonidine or opioid patches.", "rationale": "Abrupt removal risks rebound hypertension or withdrawal; note that some patches must be removed for MRI or defibrillation."}
+];
+
+const MED_BY_ID={}; MEDS.forEach(function(m,i){m.num=i+1;MED_BY_ID[m.id]=m;});
+const MED_CLSORDER=["cv", "clot", "endo", "resp", "neuro", "pain", "herb", "other"];
+const MED_CLSFULL={"cv": "Cardiovascular", "clot": "Antithrombotic", "endo": "Diabetes & endocrine", "resp": "Pulmonary", "neuro": "Neurologic & psychiatric", "pain": "Pain, rheumatology & addiction", "herb": "Herbals & supplements", "other": "Other"};
+const MED_ACTLBL={continue:'Continue',hold:'Hold',adjust:'Adjust dose',depends:'Individualize'};
+const MED_ACTSHORT={continue:'Continue',hold:'Hold',adjust:'Adjust',depends:'Depends'};
+
+function buildMeds(){
+  var html=MED_CLSORDER.map(function(cl){
+    var items=MEDS.filter(function(m){return m.cls===cl;});
+    if(!items.length) return '';
+    return '<div class="med-group '+cl+'"><div class="med-group-h"><span class="dot"></span><span class="lbl">'+MED_CLSFULL[cl]+'</span><span class="ct">'+items.length+'</span></div>'+
+      '<div class="med-grid">'+items.map(function(m){
+        return '<button class="med-card '+m.cls+'" onclick="location.hash=\'#/meds/'+m.id+'\'"><span class="medtx"><span class="mednm">'+m.name+'</span><span class="medshort">'+m.short+'</span></span><span class="med-pill '+m.action+'">'+MED_ACTSHORT[m.action]+'</span></button>';
+      }).join('')+'</div></div>';
+  }).join('');
+  document.getElementById('med-grid').innerHTML=html;
+}
+function medSec(label,body){ if(!body) return ''; return '<div class="med-sec"><h3>'+label+'</h3><p>'+body+'</p></div>'; }
+function renderMed(id){
+  var m=MED_BY_ID[id]; if(!m){location.hash='#/meds';return;}
+  var idx=MEDS.indexOf(m);
+  var prev=idx>0?MEDS[idx-1]:null, next=idx<MEDS.length-1?MEDS[idx+1]:null;
+  document.getElementById('med-detail').innerHTML=
+    '<div class="med-titlebar '+m.cls+'"><h2>'+m.name+'</h2><div class="medsub">'+MED_CLSFULL[m.cls]+' \u00b7 '+m.short+'</div></div>'+
+    '<div class="med-body">'+
+      '<div class="med-badge '+m.action+'">'+MED_ACTLBL[m.action]+'</div>'+
+      medSec('Recommendation',m.timing)+
+      medSec('Rationale',m.rationale)+
+      (m.resume?medSec('Resuming',m.resume):'')+
+      (m.notes?medSec('Notes & caveats',m.notes):'')+
+      '<div class="med-nav">'+
+        (prev?'<button onclick="location.hash=\'#/meds/'+prev.id+'\'">\u2190 '+prev.name+'</button>':'<button disabled>\u2190</button>')+
+        (next?'<button onclick="location.hash=\'#/meds/'+next.id+'\'">'+next.name+' \u2192</button>':'<button disabled>\u2192</button>')+
+      '</div>'+
+    '</div>';
+}
+
 /* ================= ROUTER ================= */
 
 
-const VIEWS={'':'view-home','#/la':'view-la','#/asra':'view-asra','#/peds':'view-peds','#/adult':'view-adult','#/tee':'view-tee','#/blocks':'view-blocks','#/cx':'view-cx','#/em':'view-em','#/calc':'view-calc'};
-const CRUMBS={'':'reference guide <b>/ home</b>','#/la':'reference guide <b>/ local anesthetics</b>','#/asra':'reference guide <b>/ asra 5e</b>','#/peds':'reference guide <b>/ pediatric dosing</b>','#/adult':'reference guide <b>/ adult dosing</b>','#/tee':'reference guide <b>/ tee exam</b>','#/blocks':'reference guide <b>/ nerve blocks</b>','#/cx':'reference guide <b>/ comorbidities</b>','#/em':'reference guide <b>/ emergencies</b>','#/calc':'reference guide <b>/ calculators</b>'};
+const VIEWS={'':'view-home','#/la':'view-la','#/asra':'view-asra','#/peds':'view-peds','#/adult':'view-adult','#/tee':'view-tee','#/blocks':'view-blocks','#/cx':'view-cx','#/meds':'view-meds','#/em':'view-em','#/calc':'view-calc'};
+const CRUMBS={'':'reference guide <b>/ home</b>','#/la':'reference guide <b>/ local anesthetics</b>','#/asra':'reference guide <b>/ asra 5e</b>','#/peds':'reference guide <b>/ pediatric dosing</b>','#/adult':'reference guide <b>/ adult dosing</b>','#/tee':'reference guide <b>/ tee exam</b>','#/blocks':'reference guide <b>/ nerve blocks</b>','#/cx':'reference guide <b>/ comorbidities</b>','#/meds':'reference guide <b>/ med guidelines</b>','#/em':'reference guide <b>/ emergencies</b>','#/calc':'reference guide <b>/ calculators</b>'};
 function route(){
   const raw=location.hash;
   Object.values(VIEWS).forEach(v=>$(v).hidden=true);
@@ -3028,6 +3228,18 @@ function route(){
   $('view-tee-detail').hidden=true;
   $('view-blocks-detail').hidden=true;
   $('view-cx-detail').hidden=true;
+  $('view-meds-detail').hidden=true;
+  if(raw.startsWith('#/meds/')){
+    const id=raw.slice(7);
+    if(MED_BY_ID[id]){
+      renderMed(id);
+      $('view-meds-detail').hidden=false;
+      $('crumb').innerHTML='reference guide <b>/ med guidelines / '+MED_BY_ID[id].name.toLowerCase()+'</b>';
+      window.scrollTo(0,0);
+      return;
+    }
+    location.hash='#/meds'; return;
+  }
   if(raw.startsWith('#/cx/')){
     const id=raw.slice(5);
     if(CX_BY_ID[id]){
@@ -3097,6 +3309,7 @@ buildAdult();
 buildTEE();
 buildBlocks();
 buildCx();
+buildMeds();
 buildEM();
 buildCalc();
 $('wt').addEventListener('input',render);
