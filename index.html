@@ -529,6 +529,60 @@ td .dim{color:var(--ink-faint);font-size:11.5px;font-family:var(--mono)}
 .med-nav button{font-family:var(--mono);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:99px;padding:8px 13px;background:var(--surface);transition:border-color .15s;max-width:47%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .med-nav button:hover:not(:disabled){border-color:var(--teal)}
 .med-nav button:disabled{opacity:.3;cursor:default}
+/* labs */
+.lab-intro{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.lab-intro b{color:var(--ink)}
+.lab-group{margin-bottom:24px}
+.lab-group-h{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.lab-group-h .dot{width:12px;height:12px;border-radius:4px;flex:none}
+.lab-group-h .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.lab-group-h .ct{font-family:var(--mono);font-size:11px;color:var(--ink-faint);border:1px solid var(--line);border-radius:99px;padding:2px 9px}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.lab-card{display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--slate);border-radius:11px;padding:11px 13px;transition:transform .1s,box-shadow .1s,border-color .1s;font-family:inherit}
+.lab-card:hover{transform:translateY(-1px);box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}
+.lab-card .labtx{min-width:0}
+.lab-card .labnm{font-size:13.5px;font-weight:600;letter-spacing:-.01em;line-height:1.2;display:block}
+.lab-card .labref{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-top:3px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lab-titlebar{border-radius:14px 14px 0 0;padding:18px 24px;color:#fff}
+.lab-titlebar h2{font-family:var(--disp);font-size:23px;font-weight:700;letter-spacing:-.02em;margin:0;color:#fff}
+.lab-titlebar .labsub{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.92);margin-top:4px}
+.lab-body{border:1px solid var(--line);border-top:none;border-radius:0 0 14px 14px;background:var(--surface);padding:18px 24px 20px}
+.lab-range{background:var(--teal-ghost);border:1px solid var(--line-soft);border-radius:10px;padding:12px 16px;margin-bottom:4px}
+.lab-range .rlbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:4px}
+.lab-range .rval{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--ink);line-height:1.25}
+.lab-range .rval span{font-size:13px;font-weight:400;color:var(--ink-soft)}
+.lab-sec{padding:16px 0 2px}
+.lab-sec h3{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 7px}
+.lab-sec p{font-size:14px;color:var(--ink);line-height:1.6;margin:0}
+.lab-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.lab-nav button{font-family:var(--mono);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:99px;padding:8px 13px;background:var(--surface);transition:border-color .15s;max-width:47%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lab-nav button:hover:not(:disabled){border-color:var(--teal)}
+.lab-nav button:disabled{opacity:.3;cursor:default}
+.lab-group.bmp .dot{background:#147A8B} .lab-group.bmp .lbl{color:#147A8B}
+.lab-card.bmp{border-left-color:#147A8B}
+.lab-titlebar.bmp{background:#147A8B}
+.lab-group.cbc .dot{background:#8E2862} .lab-group.cbc .lbl{color:#8E2862}
+.lab-card.cbc{border-left-color:#8E2862}
+.lab-titlebar.cbc{background:#8E2862}
+.lab-group.coag .dot{background:#C0392B} .lab-group.coag .lbl{color:#C0392B}
+.lab-card.coag{border-left-color:#C0392B}
+.lab-titlebar.coag{background:#C0392B}
+.lab-group.liver .dot{background:#1F7A4D} .lab-group.liver .lbl{color:#1F7A4D}
+.lab-card.liver{border-left-color:#1F7A4D}
+.lab-titlebar.liver{background:#1F7A4D}
+.lab-group.cardiac .dot{background:#B0367A} .lab-group.cardiac .lbl{color:#B0367A}
+.lab-card.cardiac{border-left-color:#B0367A}
+.lab-titlebar.cardiac{background:#B0367A}
+.lab-group.abg .dot{background:#2E86AB} .lab-group.abg .lbl{color:#2E86AB}
+.lab-card.abg{border-left-color:#2E86AB}
+.lab-titlebar.abg{background:#2E86AB}
+.lab-group.endoLab .dot{background:#C07A16} .lab-group.endoLab .lbl{color:#C07A16}
+.lab-card.endoLab{border-left-color:#C07A16}
+.lab-titlebar.endoLab{background:#C07A16}
+.lab-group.misc .dot{background:#566573} .lab-group.misc .lbl{color:#566573}
+.lab-card.misc{border-left-color:#566573}
+.lab-titlebar.misc{background:#566573}
+
 .med-group.cv .dot{background:#C0392B} .med-group.cv .lbl{color:#C0392B}
 .med-card.cv{border-left-color:#C0392B}
 .med-titlebar.cv{background:#C0392B}
@@ -591,6 +645,16 @@ footer .mono{font-family:var(--mono)}
 .disclaimer{font-size:11.5px;color:var(--ink-faint);line-height:1.55;max-width:720px}
 
 @media(max-width:640px){
+  /* compact 3-across tool grid on phones */
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .tool-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;padding:12px 6px 10px;min-height:0;gap:7px;border-radius:14px}
+  .tool-card .icon{width:36px;height:36px;border-radius:10px}
+  .tool-card .icon svg{width:19px;height:19px}
+  .tool-card > div:not([class]){width:100%}
+  .tool-card h3{font-size:12.5px;line-height:1.2;letter-spacing:-.01em}
+  .tool-card p{display:none}
+  .tool-card .go{display:none}
+  .tool-card.soon{border-style:dashed}
   .wt-card{flex-wrap:wrap;gap:10px}
   #wt{font-size:26px;width:96px}
   .page-head{padding-top:28px}
@@ -697,6 +761,14 @@ footer .mono{font-family:var(--mono)}
         <div>
           <h3>Med hold guidelines</h3>
           <p>Hold or continue — 73 drugs by class, each with the timing and the reason behind the perioperative recommendation.</p>
+        </div>
+        <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </button>
+      <button class="tool-card" onclick="location.hash='#/labs'">
+        <div class="icon ic-ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6.5L4.5 17a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L15 9.5V3"/><path d="M8 3h8"/><path d="M7 14h10"/></svg></div>
+        <div>
+          <h3>Lab values</h3>
+          <p>Reference ranges by panel — chemistry, CBC, coags, LFTs, cardiac markers, ABG — with why each one matters.</p>
         </div>
         <div class="go">Open tool <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </button>
@@ -1017,6 +1089,25 @@ footer .mono{font-family:var(--mono)}
       <button class="back" onclick="location.hash='#/meds'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All medications</button>
     </div>
     <div id="med-detail" class="tee-detail-wrap"></div>
+  </section>
+
+  <!-- ============ LAB VALUES ============ -->
+  <section id="view-labs" hidden>
+    <div class="page-head">
+      <div>
+        <h2>Lab values</h2>
+        <div class="sub">Reference ranges grouped by panel, the way results are reported. Tap any lab for its range and clinical significance.</div>
+      </div>
+      <button class="back" onclick="location.hash=''"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All tools</button>
+    </div>
+    <div class="lab-intro">Typical adult reference ranges — <b>values vary by laboratory, assay, age, sex, and pregnancy, so always use your own lab’s reported range</b> for clinical decisions.</div>
+    <div id="lab-grid"></div>
+  </section>
+  <section id="view-labs-detail" hidden>
+    <div class="page-head" style="padding-bottom:8px">
+      <button class="back" onclick="location.hash='#/labs'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All labs</button>
+    </div>
+    <div id="lab-detail" class="tee-detail-wrap"></div>
   </section>
 </div>
 
@@ -3215,11 +3306,102 @@ function renderMed(id){
     '</div>';
 }
 
+/* ================= LAB VALUE REFERENCE ================= */
+const LABS=[
+{"id": "na", "grp": "bmp", "name": "Sodium (Na+)", "ref": "135\u2013145", "unit": "mEq/L", "sig": "Reflects free-water balance more than salt content. Correct chronic hyponatremia slowly (<8\u201310 mEq/L per 24 h) to avoid osmotic demyelination; acute severe hyponatremia (<120) causes cerebral edema and seizures. Watch after TURP, hysteroscopy and in SIADH or DI."},
+{"id": "k", "grp": "bmp", "name": "Potassium (K+)", "ref": "3.5\u20135.0", "unit": "mEq/L", "sig": "Drives cardiac excitability. Hyperkalemia (>5.5) causes peaked T waves \u2192 widened QRS \u2192 arrest, and contraindicates succinylcholine; hypokalemia predisposes to arrhythmia and potentiates neuromuscular blockade. Check before dialysis-dependent, burn, crush and renal-failure cases."},
+{"id": "cl", "grp": "bmp", "name": "Chloride (Cl\u2212)", "ref": "98\u2013107", "unit": "mEq/L", "sig": "Tracks with sodium and acid\u2013base status. Large-volume normal saline causes hyperchloremic metabolic acidosis; a low chloride suggests vomiting or NG losses with metabolic alkalosis."},
+{"id": "co2", "grp": "bmp", "name": "Bicarbonate (HCO3\u2212 / CO2)", "ref": "22\u201328", "unit": "mEq/L", "sig": "The metabolic component of acid\u2013base balance. A low value indicates metabolic acidosis (or renal compensation for respiratory alkalosis); a high value indicates metabolic alkalosis or chronic CO2 retention \u2014 important for setting ventilation goals in COPD."},
+{"id": "bun", "grp": "bmp", "name": "BUN", "ref": "7\u201320", "unit": "mg/dL", "sig": "Rises with renal impairment but also with dehydration, GI bleeding and high protein intake. A BUN:creatinine ratio >20:1 suggests a prerenal (volume-responsive) picture."},
+{"id": "cr", "grp": "bmp", "name": "Creatinine", "ref": "0.6\u20131.2 (M) \u00b7 0.5\u20131.1 (F)", "unit": "mg/dL", "sig": "The main index of renal function and the basis for drug dose adjustment (and for holding DOACs, metformin and nephrotoxins). It lags acute injury, so a normal value early does not exclude AKI; low muscle mass masks impairment in the elderly."},
+{"id": "gfr", "grp": "bmp", "name": "eGFR", "ref": ">60", "unit": "mL/min/1.73m\u00b2", "sig": "Stages chronic kidney disease and guides drug dosing and contrast decisions. Below 30, favor organ-independent drugs (cisatracurium) and avoid nephrotoxins and renally cleared agents."},
+{"id": "glu", "grp": "bmp", "name": "Glucose", "ref": "70\u2013100 (fasting)", "unit": "mg/dL", "sig": "Target roughly 140\u2013180 perioperatively. Hypoglycemia is masked under general anesthesia, and marked hyperglycemia worsens infection, wound healing and neurologic injury. Euglycemic DKA can occur with SGLT2 inhibitors despite a near-normal glucose."},
+{"id": "ca", "grp": "bmp", "name": "Calcium (total)", "ref": "8.5\u201310.5", "unit": "mg/dL", "sig": "Report with albumin \u2014 total calcium falls about 0.8 mg/dL for every 1 g/dL drop in albumin. Hypocalcemia causes laryngospasm, tetany, prolonged QT and impaired coagulation, classically after thyroidectomy or massive transfusion (citrate)."},
+{"id": "ica", "grp": "bmp", "name": "Ionized calcium", "ref": "1.1\u20131.35", "unit": "mmol/L", "sig": "The physiologically active fraction and the value to trust in the OR. It falls with alkalosis and with citrate load during massive transfusion, causing hypotension and impaired coagulation \u2014 replace with calcium chloride or gluconate."},
+{"id": "mg", "grp": "bmp", "name": "Magnesium", "ref": "1.7\u20132.4", "unit": "mg/dL", "sig": "Low magnesium causes refractory hypokalemia and arrhythmias including torsades. High levels (therapeutic in preeclampsia, 4\u20138) potentiate neuromuscular blockade and cause loss of deep tendon reflexes, then respiratory depression and cardiac arrest."},
+{"id": "phos", "grp": "bmp", "name": "Phosphate", "ref": "2.5\u20134.5", "unit": "mg/dL", "sig": "Severe hypophosphatemia impairs diaphragmatic contractility and can prevent ventilator weaning; hyperphosphatemia accompanies renal failure and tumor lysis."},
+{"id": "alb", "grp": "bmp", "name": "Albumin", "ref": "3.5\u20135.0", "unit": "g/dL", "sig": "An index of nutrition, hepatic synthesis and inflammation, and a strong predictor of surgical outcome. Low albumin increases the free (active) fraction of highly protein-bound drugs and shifts total calcium."},
+{"id": "osm", "grp": "bmp", "name": "Serum osmolality", "ref": "275\u2013295", "unit": "mOsm/kg", "sig": "Used to interpret sodium disorders and to guide osmotherapy for raised ICP (mannitol/hypertonic saline are typically titrated to about 300\u2013320). An osmolar gap suggests toxic alcohol ingestion."},
+{"id": "hgb", "grp": "cbc", "name": "Hemoglobin", "ref": "13.5\u201317.5 (M) \u00b7 12\u201315.5 (F)", "unit": "g/dL", "sig": "Determines oxygen-carrying capacity and the transfusion decision. Most stable patients tolerate a restrictive threshold near 7 g/dL (about 8 with active cardiac disease); decide on physiology and ongoing losses, not the number alone."},
+{"id": "hct", "grp": "cbc", "name": "Hematocrit", "ref": "41\u201353% (M) \u00b7 36\u201346% (F)", "unit": "%", "sig": "Roughly three times the hemoglobin. High values raise viscosity and thrombosis risk (polycythemia); it lags acute hemorrhage until fluid shifts occur, so an early normal value does not exclude major bleeding."},
+{"id": "wbc", "grp": "cbc", "name": "WBC count", "ref": "4,500\u201311,000", "unit": "/\u00b5L", "sig": "Screens for infection; a marked left shift suggests bacterial infection, while an absolute neutrophil count below 500 mandates neutropenic precautions. Steroids and surgical stress raise it non-specifically."},
+{"id": "plt", "grp": "cbc", "name": "Platelet count", "ref": "150,000\u2013400,000", "unit": "/\u00b5L", "sig": "Guides bleeding and neuraxial decisions \u2014 surgery generally needs >50,000, neuraxial techniques are commonly deferred below roughly 70\u201380,000, and spontaneous bleeding occurs below 10\u201320,000. The trend and cause (ITP, HIT, consumption) matter as much as the value."},
+{"id": "mcv", "grp": "cbc", "name": "MCV", "ref": "80\u2013100", "unit": "fL", "sig": "Classifies anemia: microcytic suggests iron deficiency or thalassemia, macrocytic suggests B12/folate deficiency, alcohol or liver disease. Directs preoperative anemia optimization."},
+{"id": "retic", "grp": "cbc", "name": "Reticulocyte count", "ref": "0.5\u20132.5", "unit": "%", "sig": "Distinguishes hypoproliferative anemia (low) from hemolysis or blood loss with an intact marrow response (high)."},
+{"id": "pt", "grp": "coag", "name": "PT", "ref": "11\u201313.5", "unit": "sec", "sig": "Assesses the extrinsic and common pathways (factor VII first). It is the earliest coagulation test to become abnormal in liver disease and vitamin-K deficiency because factor VII has the shortest half-life."},
+{"id": "inr", "grp": "coag", "name": "INR", "ref": "0.8\u20131.2 (untreated)", "unit": "ratio", "sig": "Standardizes the PT and monitors warfarin. Most surgery requires an INR below about 1.5, and neuraxial techniques generally require normalization; reverse urgently with PCC and vitamin K rather than waiting."},
+{"id": "aptt", "grp": "coag", "name": "aPTT", "ref": "25\u201335", "unit": "sec", "sig": "Assesses the intrinsic and common pathways and monitors unfractionated heparin. It is prolonged in hemophilia A/B and by direct thrombin inhibitors; confirm normalization before neuraxial placement after a heparin infusion."},
+{"id": "fib", "grp": "coag", "name": "Fibrinogen", "ref": "200\u2013400", "unit": "mg/dL", "sig": "The first factor to fall critically in massive hemorrhage and obstetric bleeding. Replace with cryoprecipitate or concentrate below roughly 150\u2013200 (higher threshold in obstetrics); it is an acute-phase reactant so a \u201cnormal\u201d value may be inappropriately low in pregnancy."},
+{"id": "ddimer", "grp": "coag", "name": "D-dimer", "ref": "<0.50", "unit": "\u00b5g/mL FEU", "sig": "A fibrin degradation product with high sensitivity but poor specificity \u2014 most useful to rule out VTE in low-risk patients. It rises with surgery, pregnancy, malignancy, infection and age."},
+{"id": "antixa", "grp": "coag", "name": "Anti-Xa level", "ref": "varies by indication", "unit": "IU/mL", "sig": "Monitors LMWH and can quantify direct Xa inhibitors where available. Useful in renal impairment, obesity and pregnancy, and when the timing of the last dose is uncertain before neuraxial blockade."},
+{"id": "teg", "grp": "coag", "name": "TEG / ROTEM", "ref": "see device parameters", "unit": "\u2014", "sig": "Viscoelastic testing gives a functional, whole-blood picture in real time: R/CT time reflects factors (give plasma), MA/MCF reflects platelets and fibrinogen, and LY30 reveals fibrinolysis (give an antifibrinolytic). It guides goal-directed transfusion in trauma, cardiac and liver surgery."},
+{"id": "ast", "grp": "liver", "name": "AST", "ref": "10\u201340", "unit": "U/L", "sig": "A hepatocellular enzyme also present in muscle and heart. An AST:ALT ratio above 2:1 suggests alcoholic liver disease."},
+{"id": "alt", "grp": "liver", "name": "ALT", "ref": "7\u201356", "unit": "U/L", "sig": "The most liver-specific transaminase; marked elevation indicates hepatocellular injury and argues for postponing elective surgery in acute hepatitis."},
+{"id": "alp", "grp": "liver", "name": "Alkaline phosphatase", "ref": "44\u2013147", "unit": "U/L", "sig": "Elevated in cholestasis and biliary obstruction, and also in bone disease and normal pregnancy (placental source)."},
+{"id": "tbili", "grp": "liver", "name": "Total bilirubin", "ref": "0.1\u20131.2", "unit": "mg/dL", "sig": "Reflects hepatic conjugation and excretion; a component of the Child-Pugh and MELD scores that predict perioperative mortality in cirrhosis. Unconjugated elevation suggests hemolysis or Gilbert syndrome."},
+{"id": "ammonia", "grp": "liver", "name": "Ammonia", "ref": "15\u201345", "unit": "\u00b5g/dL", "sig": "Supports the diagnosis of hepatic encephalopathy, though it correlates poorly with severity. Consider it in unexplained delayed emergence in a patient with liver disease."},
+{"id": "lactate", "grp": "liver", "name": "Lactate", "ref": "0.5\u20132.0", "unit": "mmol/L", "sig": "A marker of tissue hypoperfusion and anaerobic metabolism; clearance is a resuscitation endpoint in shock and sepsis. It also rises with metformin, seizures, high-dose epinephrine, mitochondrial disease and liver failure."},
+{"id": "trop", "grp": "cardiac", "name": "Troponin (high-sensitivity)", "ref": "assay-specific cutoff", "unit": "ng/L", "sig": "The key marker of myocardial injury. Perioperative MI is frequently silent under analgesia, so trending troponin in high-risk patients detects myocardial injury after noncardiac surgery (MINS), which carries substantial mortality; interpret the delta rather than a single value, since renal failure raises the baseline."},
+{"id": "bnp", "grp": "cardiac", "name": "BNP / NT-proBNP", "ref": "BNP <100 \u00b7 NT-proBNP <300", "unit": "pg/mL", "sig": "Reflects ventricular wall stress; an elevated preoperative value independently predicts perioperative cardiac events and helps distinguish cardiac from pulmonary dyspnea. Levels rise with age and renal impairment."},
+{"id": "ck", "grp": "cardiac", "name": "CK / CK-MB", "ref": "CK 30\u2013200", "unit": "U/L", "sig": "Markedly elevated CK indicates rhabdomyolysis \u2014 expected after succinylcholine in undiagnosed muscular dystrophy, in malignant hyperthermia, and with crush or prolonged immobility \u2014 and warns of hyperkalemia and pigment nephropathy."},
+{"id": "ph", "grp": "abg", "name": "pH", "ref": "7.35\u20137.45", "unit": "\u2014", "sig": "The starting point of every gas interpretation: identify acidemia or alkalemia, then decide whether the primary problem is respiratory (PaCO2) or metabolic (HCO3\u2212) and whether compensation is appropriate. Acidosis blunts catecholamine response and raises pulmonary vascular resistance."},
+{"id": "paco2", "grp": "abg", "name": "PaCO2", "ref": "35\u201345", "unit": "mmHg", "sig": "The respiratory component and a direct index of alveolar ventilation. It guides ventilator settings, drives cerebral blood flow (roughly 1\u20132 mL/100 g/min per mmHg) and is deliberately manipulated in neuroanesthesia; chronic retainers run a higher baseline with a compensating bicarbonate."},
+{"id": "pao2", "grp": "abg", "name": "PaO2", "ref": "80\u2013100 (room air)", "unit": "mmHg", "sig": "Assesses oxygenation; interpret against the FiO2 using the P/F ratio (below 300 suggests ARDS, below 200 moderate-to-severe). Unlike saturation it detects hyperoxia and quantifies reserve."},
+{"id": "be", "grp": "abg", "name": "Base excess", "ref": "\u22122 to +2", "unit": "mEq/L", "sig": "Quantifies the metabolic component independent of respiration; a strongly negative base deficit signals significant metabolic acidosis and is used as a marker of hypoperfusion and resuscitation adequacy in trauma."},
+{"id": "aniongap", "grp": "abg", "name": "Anion gap", "ref": "8\u201312", "unit": "mEq/L", "sig": "Calculated as Na \u2212 (Cl + HCO3). A raised gap points to lactate, ketones, renal failure or toxins; a normal gap suggests GI bicarbonate loss or hyperchloremic acidosis from saline. Correct the gap for albumin, which otherwise masks elevation."},
+{"id": "sao2", "grp": "abg", "name": "SaO2 / SpO2", "ref": "95\u2013100", "unit": "%", "sig": "Reflects hemoglobin saturation on the sigmoid dissociation curve, so it is insensitive to falling PaO2 until the steep portion. It reads falsely high with carbon monoxide and is unreliable with methemoglobinemia (trends toward 85%) \u2014 use a co-oximeter when either is suspected."},
+{"id": "methb", "grp": "abg", "name": "Methemoglobin", "ref": "<1.5", "unit": "%", "sig": "Rises with benzocaine, prilocaine, nitrates and dapsone, causing cyanosis with a normal PaO2 and a saturation that plateaus near 85%. Treat significant levels with methylene blue \u2014 except in G6PD deficiency, where it is contraindicated."},
+{"id": "cohb", "grp": "abg", "name": "Carboxyhemoglobin", "ref": "<2 (nonsmoker)", "unit": "%", "sig": "Elevated in smokers and smoke inhalation. It reduces oxygen delivery while making pulse oximetry read falsely normal, so diagnosis requires co-oximetry; treat with high-flow oxygen."},
+{"id": "hba1c", "grp": "endoLab", "name": "HbA1c", "ref": "<5.7 (normal) \u00b7 <7 typical target", "unit": "%", "sig": "Reflects average glycemia over about three months and is the best index of chronic control. A markedly elevated value predicts surgical-site infection and poor wound healing and may prompt optimization before elective surgery."},
+{"id": "tsh", "grp": "endoLab", "name": "TSH", "ref": "0.4\u20134.0", "unit": "mIU/L", "sig": "The most sensitive screen for thyroid dysfunction (it moves before free T4). Severe untreated hypothyroidism or thyrotoxicosis warrants delaying elective surgery because of myxedema coma and thyroid storm risk."},
+{"id": "ft4", "grp": "endoLab", "name": "Free T4", "ref": "0.8\u20131.8", "unit": "ng/dL", "sig": "Confirms and grades the severity of thyroid dysfunction identified by TSH and tracks the response to therapy."},
+{"id": "cortisol", "grp": "endoLab", "name": "Cortisol (AM)", "ref": "6\u201323", "unit": "\u00b5g/dL", "sig": "Screens for adrenal insufficiency when refractory hypotension is unexplained; a low value in a stressed patient supports adrenal crisis and warrants hydrocortisone without waiting for confirmatory testing."},
+{"id": "metanephrine", "grp": "endoLab", "name": "Plasma metanephrines", "ref": "<0.5 (metanephrine)", "unit": "nmol/L", "sig": "The screening test for pheochromocytoma; a marked elevation demands \u03b1-blockade before any surgery, since anesthesia in an unblocked patient can precipitate a fatal hypertensive crisis."},
+{"id": "betahcg", "grp": "endoLab", "name": "\u03b2-hCG", "ref": "negative (non-pregnant)", "unit": "mIU/mL", "sig": "Pregnancy testing before elective surgery in people of childbearing potential, because pregnancy changes airway management, drug selection, positioning and the decision to proceed at all."},
+{"id": "crp", "grp": "misc", "name": "CRP", "ref": "<3", "unit": "mg/L", "sig": "A non-specific acute-phase reactant that rises and falls faster than ESR; useful for tracking infection or inflammatory activity rather than for diagnosis."},
+{"id": "procal", "grp": "misc", "name": "Procalcitonin", "ref": "<0.5", "unit": "ng/mL", "sig": "More specific for bacterial infection than CRP and used to support sepsis diagnosis and guide antibiotic duration."},
+{"id": "esr", "grp": "misc", "name": "ESR", "ref": "0\u201322 (M) \u00b7 0\u201329 (F)", "unit": "mm/hr", "sig": "A slow, non-specific marker of inflammation useful in chronic inflammatory and rheumatologic disease."},
+{"id": "lactatecl", "grp": "misc", "name": "Urinalysis", "ref": "negative for protein, glucose, blood, nitrite", "unit": "\u2014", "sig": "Screens for infection before implant and urologic procedures and reveals proteinuria or glycosuria pointing to renal disease or diabetes."},
+{"id": "typescreen", "grp": "misc", "name": "Type & screen / crossmatch", "ref": "ABO/Rh + antibody screen", "unit": "\u2014", "sig": "Establishes blood group and detects alloantibodies; a positive screen greatly lengthens the time to obtain compatible units, so it must be sent early for any case with meaningful transfusion risk."},
+{"id": "drugscreen", "grp": "misc", "name": "Toxicology screen", "ref": "negative", "unit": "\u2014", "sig": "Identifies substances that alter anesthetic requirements and hemodynamic stability \u2014 stimulants cause lability and ischemia, while chronic use raises tolerance and withdrawal risk."}
+];
+
+const LAB_BY_ID={}; LABS.forEach(function(l,i){l.num=i+1;LAB_BY_ID[l.id]=l;});
+const LAB_GRPORDER=["bmp", "cbc", "coag", "liver", "cardiac", "abg", "endoLab", "misc"];
+const LAB_GRPFULL={"bmp": "Chemistry & electrolytes", "cbc": "Hematology (CBC)", "coag": "Coagulation", "liver": "Liver & metabolic", "cardiac": "Cardiac markers", "abg": "Arterial blood gas", "endoLab": "Endocrine", "misc": "Infection & other"};
+
+function buildLabs(){
+  var html=LAB_GRPORDER.map(function(g){
+    var items=LABS.filter(function(l){return l.grp===g;});
+    if(!items.length) return '';
+    return '<div class="lab-group '+g+'"><div class="lab-group-h"><span class="dot"></span><span class="lbl">'+LAB_GRPFULL[g]+'</span><span class="ct">'+items.length+'</span></div>'+
+      '<div class="lab-grid">'+items.map(function(l){
+        return '<button class="lab-card '+l.grp+'" onclick="location.hash=\'#/labs/'+l.id+'\'"><span class="labtx"><span class="labnm">'+l.name+'</span><span class="labref">'+l.ref+(l.unit&&l.unit!=='\u2014'?' '+l.unit:'')+'</span></span></button>';
+      }).join('')+'</div></div>';
+  }).join('');
+  document.getElementById('lab-grid').innerHTML=html;
+}
+function renderLab(id){
+  var l=LAB_BY_ID[id]; if(!l){location.hash='#/labs';return;}
+  var idx=LABS.indexOf(l);
+  var prev=idx>0?LABS[idx-1]:null, next=idx<LABS.length-1?LABS[idx+1]:null;
+  document.getElementById('lab-detail').innerHTML=
+    '<div class="lab-titlebar '+l.grp+'"><h2>'+l.name+'</h2><div class="labsub">'+LAB_GRPFULL[l.grp]+'</div></div>'+
+    '<div class="lab-body">'+
+      '<div class="lab-range"><div class="rlbl">Reference range</div><div class="rval">'+l.ref+(l.unit&&l.unit!=='\u2014'?' <span>'+l.unit+'</span>':'')+'</div></div>'+
+      '<div class="lab-sec"><h3>Clinical significance</h3><p>'+l.sig+'</p></div>'+
+      '<div class="lab-nav">'+
+        (prev?'<button onclick="location.hash=\'#/labs/'+prev.id+'\'">\u2190 '+prev.name+'</button>':'<button disabled>\u2190</button>')+
+        (next?'<button onclick="location.hash=\'#/labs/'+next.id+'\'">'+next.name+' \u2192</button>':'<button disabled>\u2192</button>')+
+      '</div>'+
+    '</div>';
+}
+
 /* ================= ROUTER ================= */
 
 
-const VIEWS={'':'view-home','#/la':'view-la','#/asra':'view-asra','#/peds':'view-peds','#/adult':'view-adult','#/tee':'view-tee','#/blocks':'view-blocks','#/cx':'view-cx','#/meds':'view-meds','#/em':'view-em','#/calc':'view-calc'};
-const CRUMBS={'':'reference guide <b>/ home</b>','#/la':'reference guide <b>/ local anesthetics</b>','#/asra':'reference guide <b>/ asra 5e</b>','#/peds':'reference guide <b>/ pediatric dosing</b>','#/adult':'reference guide <b>/ adult dosing</b>','#/tee':'reference guide <b>/ tee exam</b>','#/blocks':'reference guide <b>/ nerve blocks</b>','#/cx':'reference guide <b>/ comorbidities</b>','#/meds':'reference guide <b>/ med guidelines</b>','#/em':'reference guide <b>/ emergencies</b>','#/calc':'reference guide <b>/ calculators</b>'};
+const VIEWS={'':'view-home','#/la':'view-la','#/asra':'view-asra','#/peds':'view-peds','#/adult':'view-adult','#/tee':'view-tee','#/blocks':'view-blocks','#/cx':'view-cx','#/meds':'view-meds','#/labs':'view-labs','#/em':'view-em','#/calc':'view-calc'};
+const CRUMBS={'':'reference guide <b>/ home</b>','#/la':'reference guide <b>/ local anesthetics</b>','#/asra':'reference guide <b>/ asra 5e</b>','#/peds':'reference guide <b>/ pediatric dosing</b>','#/adult':'reference guide <b>/ adult dosing</b>','#/tee':'reference guide <b>/ tee exam</b>','#/blocks':'reference guide <b>/ nerve blocks</b>','#/cx':'reference guide <b>/ comorbidities</b>','#/meds':'reference guide <b>/ med guidelines</b>','#/labs':'reference guide <b>/ lab values</b>','#/em':'reference guide <b>/ emergencies</b>','#/calc':'reference guide <b>/ calculators</b>'};
 function route(){
   const raw=location.hash;
   Object.values(VIEWS).forEach(v=>$(v).hidden=true);
@@ -3229,6 +3411,18 @@ function route(){
   $('view-blocks-detail').hidden=true;
   $('view-cx-detail').hidden=true;
   $('view-meds-detail').hidden=true;
+  $('view-labs-detail').hidden=true;
+  if(raw.startsWith('#/labs/')){
+    const id=raw.slice(7);
+    if(LAB_BY_ID[id]){
+      renderLab(id);
+      $('view-labs-detail').hidden=false;
+      $('crumb').innerHTML='reference guide <b>/ lab values / '+LAB_BY_ID[id].name.toLowerCase()+'</b>';
+      window.scrollTo(0,0);
+      return;
+    }
+    location.hash='#/labs'; return;
+  }
   if(raw.startsWith('#/meds/')){
     const id=raw.slice(7);
     if(MED_BY_ID[id]){
@@ -3310,6 +3504,7 @@ buildTEE();
 buildBlocks();
 buildCx();
 buildMeds();
+buildLabs();
 buildEM();
 buildCalc();
 $('wt').addEventListener('input',render);
